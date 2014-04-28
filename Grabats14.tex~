@@ -55,7 +55,11 @@ which is a high--level programming/specification/modeling language based on rewr
 In addition, we present a new type of DPF construct named \textit{rewriting predicate} that allows us to partially specify a model and derives inferred knowledge based on model transformation rules. 
 This reduces the efforts required to explicitly specify the complete model of a system as rewriting predicates expand a partial specification to a complete specification. 
 
-\section{Rewriting Predicate}
+The paper is organized as follows: in section \ref{lbl:rewritingpredicate} we present \textit{rewriting predicate}, in section \ref{lbl:integration} we formally represent the integration of 
+multiple metamodels, in section \ref{lbl:algebra} we provide the algebraic specification for DPF specifications, we present some related works in section \ref{lbl:relatedwork}, and 
+in section \ref{lbl:conclusion} we conclude the paper with some future directions. 
+
+\section{Rewriting Predicate}\label{lbl:rewritingpredicate}
 A diagrammatic specification is formally specified in ~\cite{Rutle10} as a tuple $\mathfrak{S}$ $= (S, C^\mathfrak{S}:\Sigma)$ consisting of an underlying graph $S$ together with a set of 
 $atomic$ $constraints$ $C^\mathfrak{S}$. The predicate constraints are from a predifined \textit{diagrammatic predicate signature} $\Sigma$ and they are used to add constraints to $S$. 
 We modify the definition of \textbf{Signature} from ~\cite{Rutle10} with Definition.~\ref{def:Signature} in order to incorporate \textit{rewriting predicate} into $\Sigma$.
@@ -64,12 +68,12 @@ We modify the definition of \textbf{Signature} from ~\cite{Rutle10} with Definit
 \begin{definition}[Signature]\label{def:Signature}
  A (diagrammatic predicate) signature $\Sigma$ = $(P^\Sigma, \alpha^\Sigma \cup \pi^\Sigma)$ consists of a collection of predicate symbols $P^\Sigma$ with jointly injective 
  multi-maps $\alpha^\Sigma \cup \pi^\Sigma$. The map $\alpha^\Sigma$ assigns graphs to predicate symbols $p \in P^\Sigma$ and $\alpha^\Sigma(p)$ is called the arity of the predicate symbol $p$. 
- The map $\pi^\Sigma$ assigns transformation rules to predicate symbols $p \in P^\Sigma$ and $\pi^\Sigma(p)$ is called the rewriting predicate of $p$. 
+ The map $\pi^\Sigma$ assigns transformation rules to predicate symbols $p \in P^\Sigma$ and $\pi^\Sigma(p)$ is called the rewriting predicate of the predicate symbol $p$. 
 \end{definition}
 
 \begin{remark}
-A predicate $p \in P^\Sigma$ is either a \textit{predicate constraint}, denoted as $dom(\alpha^\Sigma)$, iff $\alpha^\Sigma(p) \neq \phi$ 
-or a \textit{rewriting predicate}, denoted as $dom(\pi^\Sigma)$, iff $\pi^\Sigma(p) \neq \phi$. 
+A predicate $p \in P^\Sigma$ is either a \textit{predicate constraint} (denoted as $dom(\alpha^\Sigma)$), iff $\alpha^\Sigma(p) \neq \phi$ 
+or a \textit{rewriting predicate} (denoted as $dom(\pi^\Sigma)$) iff $\pi^\Sigma(p) \neq \phi$. 
 \end{remark}
 
 
@@ -142,7 +146,7 @@ Table.~\ref{tbl:rewritingpredicate} to make it more readable. Negative applicati
 Now it is worthwhile to make a comparison between these two types of predicates. 
 \textit{Predicate constraints} do not derive any change to an instance of a specification whereas \textit{rewriting predicates} may change the strucutre of an instance. 
 By defining \textit{predicate constraints} we can specify some structural constraints and can decide if an instance is a valid instance of a specification. 
-In order to be consistant we need to modify the definition of \textbf{Atomic Constraint} and \textbf{Specification} from \cite{Rutle10} and include a new definition for \textbf{Rewriting Rule} as follows:
+In order to be consistent we need to modify the definition of \textbf{Atomic Constraint} and \textbf{Specification} from \cite{Rutle10} and include a new definition for \textbf{Rewriting Rule} as follows:
 
 
 \begin{definition}[Atomic Constraint]
@@ -263,13 +267,13 @@ Similarly we can explain why $I$ does not satisfy $[surjective]$ and $[image-inc
  \label{fig:entity-pb}
  \end{figure}
  
-Until at this point we have not considered the execution of \textit{rewriting predicates} over $I$. 
-By applying \textit{rewriting predicates} over $I$ we may derive new information. 
-An instance of a specification where \textit{rewriting predicates} are applicable is called a partial instance. 
-Once we apply the \textit{rewriting predicates} $[opposite]$, $[composition]$ and $[inheritance]$ over $I$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
+Until at this point we have not considered the execution of \textit{rewriting rules} over $I$. 
+By applying \textit{rewriting rules} over $I$ we may derive new information. 
+An instance of a specification where \textit{rewriting rules} are applicable is called a partial instance. 
+Once we apply the \textit{rewriting rules} $[opposite]$, $[composition]$ and $[inheritance]$ over $I$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
 Fig.~\ref{fig:entity-1-full}. We call it a complete instance of $\mathfrak{S}_1$ as no more \textit{rewriting predicates} are further applicable on $I$. 
 This complete instance is a valid instance of $\mathfrak{S}_1$ as it satisfies all atomic constraints. 
-Now it is easy to understand the motivation of using \textit{rewriting predicate} in DPF as it permits us to specify partial instance of a specification. 
+Now it is easy to understand the motivation of using \textit{rewriting predicates} in DPF as it permits us to specify partial instance of a specification. 
 We may utilize the reasoning capability of \textit{rewriting predicates} to derive a complete instance from a partially specified instance. 
 
 
@@ -316,7 +320,7 @@ A complete instance $I$ is a valid instance of specification $\mathfrak{S}$ if i
 \end{remark}
 
 
-\section{Integration of Multiple Metamodels}
+\section{Integration of Multiple Metamodels}\label{lbl:integration}
 In this section we formally define the integration of specifications and provide its syntax and semantics with a running example. 
 
 \begin{definition}[Integrated Specification]
@@ -411,7 +415,7 @@ In the transformation rule we included a \textit{condition} of the form $(\foral
 \normalsize
 
  
-\section{Algebraic Specification for Metamodel Integration}
+\section{Algebraic Specification for Metamodel Integration}\label{lbl:algebra}
 One of our intension to use algebraic specification for DPF metamodelling is to develop an execution environment for DPF framework where one could design and simulate a software model with 
 multiple metamodels. Fig.~\ref{fig:dpfmaude} shows a proposed system architecture for DPF simulate tool where maude tool has been used as an engine to perform 1) Type checking, 2) Conformance checking,
 and 3) Reasoning / derivation. During the design phase, the tool may be used to provide feedback to the designer if the model he is working on satisfies its metamodel or not. 
@@ -442,7 +446,7 @@ $R \vdash t \rightarrow t' \Leftrightarrow U \vdash \langle \overline{R}, \overl
 
 In this chain of equivalences the first computation takes place at level 0, the second computation at level 1, and so on. 
 This is a barrier to use maude metalevel programming for DPF as the computation of a single step requires considerable computational cost that involves many rewriting steps one level up. 
-For this reason it was suggested for maude to lower the number of levels of reflective computation as much as possible, so that a rewriting 
+For this reason it was suggested for maude programs to lower the number of levels of reflective computation as much as possible, so that a rewriting 
 subcomputation happens at a higher level in the tower only when this is strictly necessary \cite{Clavel2007}.
 But the semantic of DPF metamodel specifications are provided in the opposite way. 
 Once a specification $\mathfrak{S}_i$ is defined in DPF, the computation regarding type checking, conformance checking and reasoning of 
@@ -453,7 +457,7 @@ Another issue regarding the use of maude metalevel programming is the complex so
 In order to write a rewriting rule at a higher level, requires the use of metarepresentation of terms. 
 The metarepresentation of terms, when they are iterated, becomes very complex; for example, the metarepresentation of a natural number such as, e.g., 42 is $'s\_$ $\hat{}$  $42['0.Zero]$. 
 If we wish to make a reusable DPF specification, this would become a big issue as the rewriting theories metarepresented in one signature may not match in another metalevel hierarchy. 
-In general, for DPF, while we are specifying semantics for a higher level specification, we should not practice using a concept/name from a specification at lower metalevel. 
+In general, for DPF, while we are specifying signatures for a higher level specification, we should not practice using a concept/name from a specification at lower metalevel. 
 
 An algebraic semantics for MOF was presented in \cite{BoronatM10} which is very relevant with our situation. 
 In that paper the authors proposed an algebraic, mathematical semantics for MOF in membership equational logic (MEL).
@@ -464,7 +468,7 @@ An abstraction of the reflective bootstrapping strategy to define the semantic f
 \includegraphics[width=0.3\textwidth]{mof.pdf}
 \end{center}
 
-A straight forward translation of DPF specifications to maude using this approach would not work since the specifications in DPF have dynamic semantics; 
+A straightforward translation of DPF specifications to maude using this approach would not work since the specifications in DPF have dynamic semantics; 
 so the $sort$ declaration for any meta level $n$ requires parsing of the reduced term at level $n+1$.    
 This is pictorically represented in the following diagram:
 
@@ -474,6 +478,7 @@ This is pictorically represented in the following diagram:
 
 Another complexity is to deal with the integrated specification since it requires to perform a disjoint union operation over the underlying graphs of two specifications and the pullback operation 
 after reduction over the term represnting the integrated specification. 
+
 We present an object oriented stepwise approach in maude specification where each object represent a specification consisting of typed graphs and their association with predicates. 
 Predicate constraints, rewriting predicates, and type checking using graph homomorphism are encoded as conditional rewriting rules. 
 We control the execution of the rewriting rules by an external program written in Java. Terms of sort $Object$ are defined by means of the constructor in maude specification:
@@ -504,17 +509,17 @@ Part of $sorts$, $subsorts$ and $operator$ declarations of maude specification r
 
 Our stepwise translation approach is depicted in the following diagram. Consider there are $n$  number of meta levels: $M_0, M_1, .. M_{n-1}$, in every step we translate a metamodelling formalism 
 $\Sigma_{i+1}, \mathfrak{S}_{i+1}, \Sigma_{i+2}$ and a specification $\mathfrak{S}_i$ where $\mathfrak{S}_{i+1} \RHD \mathfrak{S}_{i+2}$, and 
-$\mathfrak{S}_{i}$ is a partial instance of $\mathfrak{S}_{i+1}$. After applying the rewriting rules from $R^{\mathfrak{S}_i}$ over $\mathfrak{S}_{i}$ we check if the derived specification 
-is valid or not using the set $C^{\mathfrak{S}_i}$ of predicate constraints attached to $\mathfrak{S}_{i}$. 
-The derived specification if found a valid instance of $\mathfrak{S}_{i+1}$ is then used as a meta model in the next step of translation. 
+$\mathfrak{S}_{i}$ is a partial instance of $\mathfrak{S}_{i+1}$. After applying the rewriting rules from $R^{\mathfrak{S}_{i+1}}$ over $\mathfrak{S}_{i}$ we check, if the derived specification 
+is valid or not using the set $C^{\mathfrak{S}_{i+1}}$ of predicate constraints attached to $\mathfrak{S}_{i+1}$. 
+If the derived specification is found to be a valid instance of $\mathfrak{S}_{i+1}$, then used as a meta model in the next step of translation. 
 
 \begin{center}
 \includegraphics[width=0.3\textwidth]{stepwise-dpf.pdf}
 \end{center}
 
 Terms using the $rel$ and $sigmap$ operators presented in the above maude specification are used to hold a typed graph and a signature map respectively using multimap. 
-The arguments of a $rel$ term represents a $name$, $type$, $domain$ and range respectively. 
-Here $name$ is either referring to the name of a vertex or a morphism depends on the $type$. 
+The arguments of a $rel$ term represents a $name$, $type$, $domain$ and $range$ respectively. 
+Here $name$ is either referring to the name of a vertex or a morphism depending on the $type$. 
 The arguments of a $sigmap$ term represents an $Id$, $name$ of the vertex or morphism, and \textit{predicate name} respectively. 
 A sample maude specification is provided below that represents the specification $\mathfrak{S}_1$ and its instance $I$ from Fig.~\ref{fig:entity-diagram}. 
 The subterm \textit{rel(``G0'', ``TypeOf'', ``Employee'', ``Class'')} represents that $Employee$ is a vertex of type $Class$, and 
@@ -571,9 +576,11 @@ The maude specification presented in this section can easily be used to integrat
 each specification is represented as a seperate $Object$. 
 
  
-\section{Related Work}
- 
-\section{Conclusion}
+\section{Related Work}\label{lbl:relatedwork}
+
+
+
+\section{Conclusion}\label{lbl:conclusion}
  
 % Acknowledgements for colleagues, referees, ...
 % ==============================================
