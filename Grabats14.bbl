@@ -1,0 +1,60 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{RMWL12}
+
+\bibitem[BM06]{Bruni2006}
+R.~Bruni, J.~Meseguer.
+Semantic Foundations for Generalized Rewrite Theories.
+\emph{Theor. Comput. Sci.} 360(1):386--414, Aug. 2006.
+
+\bibitem[BM10]{BoronatM10}
+A.~Boronat, J.~Meseguer.
+An algebraic semantics for MOF.
+\emph{Formal Asp. Comput.} 22(3-4):269--296, 2010.
+
+\bibitem[CDE{\etalchar{+}}07]{Clavel2007}
+M.~Clavel, F.~Dur{\'a}n, S.~Eker, P.~Lincoln, N.~Mart\'{\i}-Oliet, J.~Meseguer,
+  C.~L. Talcott (eds.).
+\emph{All About Maude - A High-Performance Logical Framework, How to Specify,
+  Program and Verify Systems in Rewriting Logic}.
+Lecture Notes in Computer Science~4350.
+Springer, 2007.
+
+\bibitem[HTN]{HTN}
+{The Chinook Primary Care Network}.
+www.chinookprimarycarenetwork.ab.ca/ \\ extranet/docs/guides/7.pdf.
+
+\bibitem[RLM14]{PAHI14}
+F.~Rabbi, Y.~Lamo, W.~MacCaull.
+{A Flexible Metamodelling Approach for Healthcare Systems}.
+\emph{2nd European Workshop on Practical Aspects of Health Informatics (PAHI),
+  Submitted}, 2014.
+
+\bibitem[RMWL12]{RutleMacCaullEtAl2012ECMFA}
+A.~Rutle, W.~MacCaull, H.~Wang, Y.~Lamo.
+{A Metamodelling Approach to Behavioural Modelling}.
+In \emph{Proceedings of BM-FA 2012: 4$^{th}$ Workshop on Behavioural Modelling:
+  Foundations and Applications}.
+Pp.~5:1--5:10.
+ACM, 2012.
+
+\bibitem[Rut10]{Rutle10}
+A.~Rutle.
+\emph{{Diagram Predicate Framework: A Formal Approach to MDE}}.
+PhD thesis, Department of Informatics, University of Bergen, Norway, 2010.
+
+\bibitem[RWM12]{RutleWMFHIES12}
+A.~Rutle, H.~Wang, W.~MacCaull.
+A Formal Diagrammatic Approach to Compensable Workflow Modelling.
+In Weber and Perseil (eds.), \emph{FHIES}.
+Lecture Notes in Computer Science~7789, pp.~194--212.
+Springer, 2012.
+
+\bibitem[WRM12]{WangRutleEtAl2012TASE}
+H.~Wang, A.~Rutle, W.~MacCaull.
+{A Formal Diagrammatic Approach to Timed Workflow Modelling}.
+In \emph{Proceedings of TASE 2012: 6$^{th}$ International Conference on
+  Theoretical Aspects of Software Engineering}.
+Volume~0, pp.~167--174.
+IEEE Computer Society, 2012.
+
+\end{thebibliography}
