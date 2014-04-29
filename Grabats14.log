@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.17)  28 APR 2014 17:01
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.17)  29 APR 2014 17:46
 entering extended mode
  %&-line parsing enabled.
 **Grabats14.tex
@@ -459,7 +459,7 @@ model trans-for-ma-tion, meta-mod-elling, rewrit-
 
 File: easst.pdf Graphic file (type pdf)
 <use easst.pdf> [1]
-Overfull \hbox (0.38118pt too wide) in paragraph at lines 75--77
+Overfull \hbox (0.38118pt too wide) in paragraph at lines 86--88
 []\OT1/ptm/m/it/10.95 Remark \OT1/ptm/m/n/10.95 1 []\OT1/ptm/m/sl/10.95 A pred-
 i-cate $\OML/ztmcm/m/it/10.95 p \OMS/ztmcm/m/n/10.95 2 \OML/ztmcm/m/it/10.95 P[
 ]$ \OT1/ptm/m/sl/10.95 is ei-ther a \OT1/ptm/m/it/10.95 pred-i-cate con-straint
@@ -473,26 +473,26 @@ m/m/n/10.95 ) \OMS/ztmcm/m/n/10.95 6\OT1/ztmcm/m/n/10.95 =
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/mult.pdf): PDF inclusion: foun
 d PDF version <1.5>, but at most version <1.4> allowed
-<images/mult.pdf, id=70, 97.90259pt x 19.99384pt>
+<images/mult.pdf, id=67, 97.90259pt x 19.99384pt>
 File: images/mult.pdf Graphic file (type pdf)
  <use images/mult.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/mult_vis.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<images/mult_vis.pdf, id=72, 116.8114pt x 30.2559pt>
+<images/mult_vis.pdf, id=69, 116.8114pt x 30.2559pt>
 File: images/mult_vis.pdf Graphic file (type pdf)
  <use images/mult_vis.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/irr_arity.pdf): PDF inclusion:
  found PDF version <1.5>, but at most version <1.4> allowed
-<images/irr_arity.pdf, id=74, 33.57281pt x 38.99294pt>
+<images/irr_arity.pdf, id=71, 33.57281pt x 38.99294pt>
 File: images/irr_arity.pdf Graphic file (type pdf)
 
 <use images/irr_arity.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/irr_vis.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/irr_vis.pdf, id=76, 58.0528pt x 47.59937pt>
+<images/irr_vis.pdf, id=73, 58.0528pt x 47.59937pt>
 File: images/irr_vis.pdf Graphic file (type pdf)
  <use images/irr_vis.pdf>
 File: images/mult.pdf Graphic file (type pdf)
@@ -501,7 +501,7 @@ File: images/mult.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inj_vis.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/inj_vis.pdf, id=78, 116.8114pt x 31.47923pt>
+<images/inj_vis.pdf, id=75, 116.8114pt x 31.47923pt>
 File: images/inj_vis.pdf Graphic file (type pdf)
  <use images/inj_vis.pdf>
 File: images/mult.pdf Graphic file (type pdf)
@@ -510,81 +510,82 @@ File: images/mult.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/surj_vis.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<images/surj_vis.pdf, id=80, 116.8114pt x 31.47923pt>
+<images/surj_vis.pdf, id=77, 116.8114pt x 31.47923pt>
 File: images/surj_vis.pdf Graphic file (type pdf)
 
 <use images/surj_vis.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv_1.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/inv_1.pdf, id=82, 96.06494pt x 60.7726pt>
+<images/inv_1.pdf, id=79, 96.06494pt x 60.7726pt>
 File: images/inv_1.pdf Graphic file (type pdf)
  <use images/inv_1.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv_vis.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/inv_vis.pdf, id=84, 131.2654pt x 73.34546pt>
+<images/inv_vis.pdf, id=81, 131.2654pt x 73.34546pt>
 File: images/inv_vis.pdf Graphic file (type pdf)
  <use images/inv_vis.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/img_1.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/img_1.pdf, id=86, 96.06494pt x 60.7726pt>
+<images/img_1.pdf, id=83, 96.06494pt x 60.7726pt>
 File: images/img_1.pdf Graphic file (type pdf)
  <use images/img_1.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/img_vis.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/img_vis.pdf, id=88, 131.2654pt x 73.34546pt>
+<images/img_vis.pdf, id=85, 131.2654pt x 73.34546pt>
 File: images/img_vis.pdf Graphic file (type pdf)
  <use images/img_vis.pdf>
-File: easst.pdf Graphic file (type pdf)
 
-<use easst.pdf>
-Overfull \vbox (1.75047pt too high) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-[2 <./images/mult.pdf> <./images/mult_vis.pdf> <./images/irr_arity.pdf> <./imag
-es/irr_vis.pdf> <./images/inj_vis.pdf> <./images/surj_vis.pdf> <./images/inv_1.
-pdf> <./images/inv_vis.pdf> <./images/img_1.pdf> <./images/img_vis.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-hom-set.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-hom-set.pdf, id=260, 425.59505pt x 101.65855pt>
+<images/inv-hom-set.pdf, id=94, 425.59505pt x 101.65855pt>
 File: images/inv-hom-set.pdf Graphic file (type pdf)
 
 <use images/inv-hom-set.pdf>
+File: easst.pdf Graphic file (type pdf)
+ <use easst.pdf>
+Overfull \vbox (1.75047pt too high) has occurred while \output is active []
+
+
+[2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-1.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-1.pdf, id=263, 96.48547pt x 47.72908pt>
+<images/inv-1.pdf, id=115, 96.48547pt x 47.72908pt>
 File: images/inv-1.pdf Graphic file (type pdf)
  <use images/inv-1.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-R.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-R.pdf, id=265, 96.48547pt x 48.5402pt>
+<images/inv-R.pdf, id=117, 96.48547pt x 48.5402pt>
 File: images/inv-R.pdf Graphic file (type pdf)
  <use images/inv-R.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-vis.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-vis.pdf, id=267, 96.48547pt x 48.5402pt>
+<images/inv-vis.pdf, id=119, 96.48547pt x 48.5402pt>
 File: images/inv-vis.pdf Graphic file (type pdf)
  <use images/inv-vis.pdf>
-Overfull \vbox (19.7469pt too high) detected at line 129
+Overfull \vbox (19.7469pt too high) detected at line 144
  []
 
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-2.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-2.pdf, id=269, 96.48547pt x 47.72908pt>
+<images/inv-2.pdf, id=121, 96.48547pt x 47.72908pt>
 File: images/inv-2.pdf Graphic file (type pdf)
  <use images/inv-2.pdf>
 File: images/inv-R.pdf Graphic file (type pdf)
@@ -593,64 +594,76 @@ File: images/inv-R.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/comp-L.pdf): PDF inclusion: fo
 und PDF version <1.5>, but at most version <1.4> allowed
-<images/comp-L.pdf, id=271, 96.7364pt x 68.33835pt>
+<images/comp-L.pdf, id=123, 96.7364pt x 68.33835pt>
 File: images/comp-L.pdf Graphic file (type pdf)
  <use images/comp-L.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/comp-R.pdf): PDF inclusion: fo
 und PDF version <1.5>, but at most version <1.4> allowed
-<images/comp-R.pdf, id=273, 96.7364pt x 68.33835pt>
+<images/comp-R.pdf, id=125, 96.7364pt x 68.33835pt>
 File: images/comp-R.pdf Graphic file (type pdf)
  <use images/comp-R.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/comp-vis.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<images/comp-vis.pdf, id=275, 96.7364pt x 68.33835pt>
+<images/comp-vis.pdf, id=127, 96.7364pt x 68.33835pt>
 File: images/comp-vis.pdf Graphic file (type pdf)
 
 <use images/comp-vis.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance-L.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance-L.pdf, id=277, 56.84575pt x 70.53853pt>
+<images/inheritance-L.pdf, id=129, 56.84575pt x 70.53853pt>
 File: images/inheritance-L.pdf Graphic file (type pdf)
 
 <use images/inheritance-L.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance-R.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance-R.pdf, id=279, 56.84575pt x 66.72427pt>
+<images/inheritance-R.pdf, id=131, 56.84575pt x 66.72427pt>
 File: images/inheritance-R.pdf Graphic file (type pdf)
 
 <use images/inheritance-R.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance-vis.pdf): PDF incl
 usion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance-vis.pdf, id=281, 22.55928pt x 66.72427pt>
+<images/inheritance-vis.pdf, id=133, 22.55928pt x 66.72427pt>
 File: images/inheritance-vis.pdf Graphic file (type pdf)
 
 <use images/inheritance-vis.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: easst.pdf Graphic file (type pdf)
- <use easst.pdf> [3 <./images/inv-hom-set.pdf> <./images/inv-1.pdf> <./images/i
-nv-R.pdf> <./images/inv-vis.pdf> <./images/inv-2.pdf> <./images/comp-L.pdf> <./
-images/comp-R.pdf> <./images/comp-vis.pdf> <./images/inheritance-L.pdf> <./imag
-es/inheritance-R.pdf> <./images/inheritance-vis.pdf>]
+<use easst.pdf> [3 <./images/mult.pdf> <./images/mult_vis.pdf> <./images/irr_ar
+ity.pdf> <./images/irr_vis.pdf> <./images/inj_vis.pdf> <./images/surj_vis.pdf> 
+<./images/inv_1.pdf> <./images/inv_vis.pdf> <./images/img_1.pdf> <./images/img_
+vis.pdf> <./images/inv-hom-set.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/entity-1.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<images/entity-1.pdf, id=389, 383.8842pt x 268.87825pt>
+<images/entity-1.pdf, id=312, 383.8842pt x 268.87825pt>
 File: images/entity-1.pdf Graphic file (type pdf)
 
 <use images/entity-1.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+File: easst.pdf Graphic file (type pdf)
+<use easst.pdf>
+Overfull \vbox (1.75047pt too high) has occurred while \output is active []
+
+
+[4 <./images/inv-1.pdf> <./images/inv-R.pdf> <./images/inv-vis.pdf> <./images/i
+nv-2.pdf> <./images/comp-L.pdf> <./images/comp-R.pdf> <./images/comp-vis.pdf> <
+./images/inheritance-L.pdf> <./images/inheritance-R.pdf> <./images/inheritance-
+vis.pdf>]
 File: images/mult.pdf Graphic file (type pdf)
-<use images/mult.pdf>
+ <use images/mult.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/atomic_delta1.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/atomic_delta1.pdf, id=396, 175.80681pt x 19.043pt>
+<images/atomic_delta1.pdf, id=406, 175.80681pt x 19.043pt>
 File: images/atomic_delta1.pdf Graphic file (type pdf)
 
 <use images/atomic_delta1.pdf>
@@ -659,7 +672,7 @@ File: images/mult.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/atomic_delta2.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/atomic_delta2.pdf, id=398, 175.80681pt x 19.29001pt>
+<images/atomic_delta2.pdf, id=408, 175.80681pt x 19.29001pt>
 File: images/atomic_delta2.pdf Graphic file (type pdf)
 
 <use images/atomic_delta2.pdf>
@@ -668,7 +681,7 @@ File: images/mult.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/atomic_delta3.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/atomic_delta3.pdf, id=400, 175.80681pt x 19.29001pt>
+<images/atomic_delta3.pdf, id=410, 175.80681pt x 19.29001pt>
 File: images/atomic_delta3.pdf Graphic file (type pdf)
 
 <use images/atomic_delta3.pdf>
@@ -677,7 +690,7 @@ File: images/inv_1.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/atomic_delta4.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/atomic_delta4.pdf, id=402, 175.80681pt x 43.64935pt>
+<images/atomic_delta4.pdf, id=412, 175.80681pt x 43.64935pt>
 File: images/atomic_delta4.pdf Graphic file (type pdf)
 
 <use images/atomic_delta4.pdf>
@@ -686,28 +699,27 @@ File: images/img_1.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/atomic_delta5.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/atomic_delta5.pdf, id=404, 175.80681pt x 43.64935pt>
+<images/atomic_delta5.pdf, id=414, 175.80681pt x 43.64935pt>
 File: images/atomic_delta5.pdf Graphic file (type pdf)
 
 <use images/atomic_delta5.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 254.
 File: images/inv-1.pdf Graphic file (type pdf)
-<use images/inv-1.pdf>
+ <use images/inv-1.pdf>
 File: images/inv-R.pdf Graphic file (type pdf)
  <use images/inv-R.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-1-delta.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-1-delta.pdf, id=406, 162.08054pt x 55.99918pt>
+<images/inv-1-delta.pdf, id=416, 162.08054pt x 55.99918pt>
 File: images/inv-1-delta.pdf Graphic file (type pdf)
 
 <use images/inv-1-delta.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-R-delta.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-R-delta.pdf, id=408, 162.18091pt x 50.32108pt>
+<images/inv-R-delta.pdf, id=418, 162.18091pt x 50.32108pt>
 File: images/inv-R-delta.pdf Graphic file (type pdf)
 
 <use images/inv-R-delta.pdf>
@@ -718,7 +730,7 @@ File: images/inv-R.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inv-2-delta.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inv-2-delta.pdf, id=410, 160.85094pt x 54.78242pt>
+<images/inv-2-delta.pdf, id=420, 160.85094pt x 54.78242pt>
 File: images/inv-2-delta.pdf Graphic file (type pdf)
 
 <use images/inv-2-delta.pdf>
@@ -732,14 +744,14 @@ File: images/comp-R.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/comp-L-delta.pdf): PDF inclusi
 on: found PDF version <1.5>, but at most version <1.4> allowed
-<images/comp-L-delta.pdf, id=412, 178.11371pt x 68.34651pt>
+<images/comp-L-delta.pdf, id=422, 178.11371pt x 68.34651pt>
 File: images/comp-L-delta.pdf Graphic file (type pdf)
 
 <use images/comp-L-delta.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/comp-R-delta.pdf): PDF inclusi
 on: found PDF version <1.5>, but at most version <1.4> allowed
-<images/comp-R-delta.pdf, id=414, 169.08168pt x 67.95387pt>
+<images/comp-R-delta.pdf, id=424, 169.08168pt x 67.95387pt>
 File: images/comp-R-delta.pdf Graphic file (type pdf)
 
 <use images/comp-R-delta.pdf>
@@ -751,14 +763,14 @@ File: images/inheritance-R.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance-L-delta.pdf): PDF 
 inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance-L-delta.pdf, id=416, 72.37878pt x 70.53853pt>
+<images/inheritance-L-delta.pdf, id=426, 72.37878pt x 70.53853pt>
 File: images/inheritance-L-delta.pdf Graphic file (type pdf)
 
 <use images/inheritance-L-delta.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance-R-delta.pdf): PDF 
 inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance-R-delta.pdf, id=418, 72.37878pt x 67.1007pt>
+<images/inheritance-R-delta.pdf, id=428, 72.37878pt x 67.1007pt>
 File: images/inheritance-R-delta.pdf Graphic file (type pdf)
 
 <use images/inheritance-R-delta.pdf>
@@ -770,99 +782,87 @@ File: images/inheritance-R.pdf Graphic file (type pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance2-L-delta.pdf): PDF
  inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance2-L-delta.pdf, id=420, 72.37878pt x 70.53853pt>
+<images/inheritance2-L-delta.pdf, id=430, 72.37878pt x 70.53853pt>
 File: images/inheritance2-L-delta.pdf Graphic file (type pdf)
 
 <use images/inheritance2-L-delta.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/inheritance2-R-delta.pdf): PDF
  inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/inheritance2-R-delta.pdf, id=422, 72.37878pt x 67.1007pt>
+<images/inheritance2-R-delta.pdf, id=432, 72.37878pt x 67.1007pt>
 File: images/inheritance2-R-delta.pdf Graphic file (type pdf)
 
 <use images/inheritance2-R-delta.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
+File: easst.pdf Graphic file (type pdf)
+<use easst.pdf> [5 <./images/entity-1.pdf> <./images/atomic_delta1.pdf> <./imag
+es/atomic_delta2.pdf> <./images/atomic_delta3.pdf> <./images/atomic_delta4.pdf>
+ <./images/atomic_delta5.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/entity-1-pullback.pdf): PDF in
 clusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/entity-1-pullback.pdf, id=426, 488.39967pt x 179.62012pt>
+<images/entity-1-pullback.pdf, id=504, 488.39967pt x 179.62012pt>
 File: images/entity-1-pullback.pdf Graphic file (type pdf)
 
 <use images/entity-1-pullback.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: easst.pdf Graphic file (type pdf)
-
-<use easst.pdf>
+ <use easst.pdf>
 Overfull \vbox (1.75047pt too high) has occurred while \output is active []
 
 
-[4]
+[6 <./images/inv-1-delta.pdf> <./images/inv-R-delta.pdf> <./images/inv-2-delta.
+pdf> <./images/comp-L-delta.pdf> <./images/comp-R-delta.pdf> <./images/inherita
+nce-L-delta.pdf> <./images/inheritance-R-delta.pdf> <./images/inheritance2-L-de
+lta.pdf> <./images/inheritance2-R-delta.pdf> <./images/entity-1-pullback.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/entity-1-full.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/entity-1-full.pdf, id=440, 383.25685pt x 213.80394pt>
+<images/entity-1-full.pdf, id=622, 383.25685pt x 213.80394pt>
 File: images/entity-1-full.pdf Graphic file (type pdf)
 
 <use images/entity-1-full.pdf>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+pdfTeX warning: /usr/bin/pdflatex (file ./images/dpo.pdf): PDF inclusion: found
+ PDF version <1.5>, but at most version <1.4> allowed
+<images/dpo.pdf, id=624, 427.82445pt x 130.33443pt>
+File: images/dpo.pdf Graphic file (type pdf)
+ <use images/dpo.pdf>
+Underfull \vbox (badness 2189) has occurred while \output is active []
 
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/dpo2.pdf): PDF inclusion: foun
-d PDF version <1.5>, but at most version <1.4> allowed
-<images/dpo2.pdf, id=442, 377.04141pt x 120.5366pt>
-File: images/dpo2.pdf Graphic file (type pdf)
- <use images/dpo2.pdf>
 File: easst.pdf Graphic file (type pdf)
 
-<use easst.pdf> [5 <./images/entity-1.pdf> <./images/dpo2.pdf>]
-File: easst.pdf Graphic file (type pdf)
-
-<use easst.pdf>
-Overfull \vbox (1.75047pt too high) has occurred while \output is active []
-
-
-[6 <./images/atomic_delta1.pdf> <./images/atomic_delta2.pdf> <./images/atomic_d
-elta3.pdf> <./images/atomic_delta4.pdf> <./images/atomic_delta5.pdf> <./images/
-entity-1-pullback.pdf>]
+<use easst.pdf> [7 <./images/entity-1-full.pdf> <./images/dpo.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/intr-pb.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/intr-pb.pdf, id=594, 201.43799pt x 87.56601pt>
+<images/intr-pb.pdf, id=704, 199.29767pt x 87.56601pt>
 File: images/intr-pb.pdf Graphic file (type pdf)
 
 <use images/intr-pb.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/fixpoint.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<images/fixpoint.pdf, id=596, 250.86237pt x 146.95767pt>
+<images/fixpoint.pdf, id=706, 244.61484pt x 146.95767pt>
 File: images/fixpoint.pdf Graphic file (type pdf)
 
 <use images/fixpoint.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/bp.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<images/bp.pdf, id=600, 491.98805pt x 196.79723pt>
+<images/bp.pdf, id=710, 491.98805pt x 196.79723pt>
 File: images/bp.pdf Graphic file (type pdf)
  <use images/bp.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: easst.pdf Graphic file (type pdf)
-<use easst.pdf> [7 <./images/inv-1-delta.pdf> <./images/inv-R-delta.pdf> <./ima
-ges/inv-2-delta.pdf> <./images/comp-L-delta.pdf> <./images/comp-R-delta.pdf> <.
-/images/inheritance-L-delta.pdf> <./images/inheritance-R-delta.pdf> <./images/i
-nheritance2-L-delta.pdf> <./images/inheritance2-R-delta.pdf> <./images/intr-pb.
-pdf> <./images/fixpoint.pdf>]
+<use easst.pdf>
+Overfull \vbox (1.75047pt too high) has occurred while \output is active []
+
+
+[8 <./images/intr-pb.pdf> <./images/fixpoint.pdf>]
 Missing character: There is no â in font zptmcm7t!
 Missing character: There is no € in font zptmcm7t!
 Missing character: There is no ² in font zptmcm7t!
@@ -870,59 +870,52 @@ Missing character: There is no ² in font zptmcm7t!
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/bp-instances.pdf): PDF inclusi
 on: found PDF version <1.5>, but at most version <1.4> allowed
-<images/bp-instances.pdf, id=756, 268.52821pt x 89.81053pt>
+<images/bp-instances.pdf, id=773, 268.52821pt x 89.81053pt>
 File: images/bp-instances.pdf Graphic file (type pdf)
 
 <use images/bp-instances.pdf>
-Underfull \vbox (badness 3417) has occurred while \output is active []
-
-File: easst.pdf Graphic file (type pdf)
-
-<use easst.pdf>
-Overfull \vbox (1.75047pt too high) has occurred while \output is active []
-
-
-[8 <./images/entity-1-full.pdf> <./images/bp.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/pre-post-example.pdf): PDF inc
 lusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/pre-post-example.pdf, id=803, 306.24413pt x 221.2198pt>
+<images/pre-post-example.pdf, id=777, 306.24413pt x 221.2198pt>
 File: images/pre-post-example.pdf Graphic file (type pdf)
 
 <use images/pre-post-example.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/pre-post-example-R.pdf): PDF i
 nclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/pre-post-example-R.pdf, id=805, 306.24413pt x 194.52675pt>
+<images/pre-post-example-R.pdf, id=779, 306.24413pt x 194.52675pt>
 File: images/pre-post-example-R.pdf Graphic file (type pdf)
 
 <use images/pre-post-example-R.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/pre-post-example-L-delta.pdf):
  PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/pre-post-example-L-delta.pdf, id=807, 306.44487pt x 219.55643pt>
+<images/pre-post-example-L-delta.pdf, id=781, 306.44487pt x 219.55643pt>
 File: images/pre-post-example-L-delta.pdf Graphic file (type pdf)
 
 <use images/pre-post-example-L-delta.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/pre-post-example-R-delta.pdf):
  PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<images/pre-post-example-R-delta.pdf, id=809, 306.44487pt x 199.74625pt>
+<images/pre-post-example-R-delta.pdf, id=783, 306.44487pt x 199.74625pt>
 File: images/pre-post-example-R-delta.pdf Graphic file (type pdf)
 
 <use images/pre-post-example-R-delta.pdf>
-Underfull \vbox (badness 1571) has occurred while \output is active []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: easst.pdf Graphic file (type pdf)
-
-<use easst.pdf> [9 <./images/bp-instances.pdf> <./images/pre-post-example.pdf> 
-<./images/pre-post-example-R.pdf> <./images/pre-post-example-L-delta.pdf> <./im
-ages/pre-post-example-R-delta.pdf>]
-<images/dpfmaude.png, id=880, 766.36313pt x 458.46281pt>
+<use easst.pdf> [9 <./images/bp.pdf> <./images/bp-instances.pdf>]
+<images/dpfmaude.png, id=838, 766.36313pt x 458.46281pt>
 File: images/dpfmaude.png Graphic file (type png)
 
 <use images/dpfmaude.png>
-Overfull \hbox (7.58635pt too wide) in paragraph at lines 435--440
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (7.58635pt too wide) in paragraph at lines 456--461
 \OT1/ptm/m/n/10.95 pro-gram-ming and met-a-lan-guage ap-pli-ca-tions may be fou
 nd from Chap-ters 14 and 17 of [[]].
  []
@@ -932,77 +925,83 @@ File: easst.pdf Graphic file (type pdf)
 Overfull \vbox (1.75047pt too high) has occurred while \output is active []
 
 
-[10 <./images/dpfmaude.png (PNG copy)>]
+[10 <./images/pre-post-example.pdf> <./images/pre-post-example-R.pdf> <./images
+/pre-post-example-L-delta.pdf> <./images/pre-post-example-R-delta.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: easst.pdf Graphic file (type pdf)
+
+<use easst.pdf> [11 <./images/dpfmaude.png (PNG copy)>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/mof.pdf): PDF inclusion: found
  PDF version <1.5>, but at most version <1.4> allowed
-<images/mof.pdf, id=889, 322.87613pt x 124.06349pt>
+<images/mof.pdf, id=888, 322.87613pt x 124.06349pt>
 File: images/mof.pdf Graphic file (type pdf)
  <use images/mof.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/mof-dpf.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<images/mof-dpf.pdf, id=891, 547.4079pt x 203.21869pt>
+<images/mof-dpf.pdf, id=890, 547.4079pt x 203.21869pt>
 File: images/mof-dpf.pdf Graphic file (type pdf)
 
 <use images/mof-dpf.pdf>
-File: easst.pdf Graphic file (type pdf)
- <use easst.pdf> [11 <./images/mof.pdf> <./images/mof-dpf.pdf>]
-Overfull \hbox (15.07013pt too wide) in paragraph at lines 490--491
+Overfull \hbox (15.07013pt too wide) in paragraph at lines 511--512
 []\OT1/ptm/m/n/10.95 Part of $\OML/ztmcm/m/it/10.95 sorts$\OT1/ptm/m/n/10.95 , 
 $\OML/ztmcm/m/it/10.95 subsorts$ \OT1/ptm/m/n/10.95 and $\OML/ztmcm/m/it/10.95 
 operator$ \OT1/ptm/m/n/10.95 dec-la-ra-tions of maude spec-i-fi-ca-tion re-late
 d to the $\OML/ztmcm/m/it/10.95 AttributeSet$
  []
 
+File: easst.pdf Graphic file (type pdf)
+<use easst.pdf>
+Overfull \vbox (1.75047pt too high) has occurred while \output is active []
 
+
+[12 <./images/mof.pdf> <./images/mof-dpf.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/stepwise-dpf.pdf): PDF inclusi
 on: found PDF version <1.5>, but at most version <1.4> allowed
-<images/stepwise-dpf.pdf, id=940, 298.84148pt x 230.15999pt>
+<images/stepwise-dpf.pdf, id=939, 298.84148pt x 230.15999pt>
 File: images/stepwise-dpf.pdf Graphic file (type pdf)
 
 <use images/stepwise-dpf.pdf>
+File: easst.pdf Graphic file (type pdf)
+ <use easst.pdf> [13 <./images/stepwise-dpf.pdf>]
+(./Grabats14.bbl
 File: easst.pdf Graphic file (type pdf)
  <use easst.pdf>
 Overfull \vbox (1.75047pt too high) has occurred while \output is active []
 
 
-[12 <./images/stepwise-dpf.pdf>] (./Grabats14.bbl
+[14])
 File: easst.pdf Graphic file (type pdf)
- <use easst.pdf> [13])
-File: easst.pdf Graphic file (type pdf)
-
-<use easst.pdf>
-Overfull \vbox (1.75047pt too high) has occurred while \output is active []
-
-
-[14] (./Grabats14.aux) ) 
+ <use easst.pdf> [15] (./Grabats14.aux) ) 
 Here is how much of TeX's memory you used:
- 6280 strings out of 493848
- 88779 string characters out of 1152823
- 166493 words of memory out of 3000000
- 9258 multiletter control sequences out of 15000+50000
- 68315 words of font info for 161 fonts, out of 3000000 for 9000
+ 6305 strings out of 493848
+ 89016 string characters out of 1152823
+ 161534 words of memory out of 3000000
+ 9272 multiletter control sequences out of 15000+50000
+ 75659 words of font info for 178 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 45i,20n,36p,326b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}<
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/euler/eufm10.pfb></usr/share/texmf-texlive/fonts/type1/hoekwater/stmary
-rd/stmary10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1
-/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/symbol/usyr.pfb>
-</usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
-w/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/wasy/wasy10.pfb>
-Output written on Grabats14.pdf (15 pages, 883845 bytes).
+ 45i,20n,36p,335b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dv
+ips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-texlive/fonts/type1/hoekwate
+r/stmaryrd/stmary10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrb8
+a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/
+texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/symbol/u
+syr.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/
+texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/
+type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr
+i8a.pfb></usr/share/texmf-texlive/fonts/type1/public/wasy/wasy10.pfb>
+Output written on Grabats14.pdf (16 pages, 889338 bytes).
 PDF statistics:
- 1036 PDF objects out of 1200 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
+ 1038 PDF objects out of 1200 (max. 8388607)
+ 56 named destinations out of 1000 (max. 500000)
  309 words of extra memory for PDF output out of 10000 (max. 10000000)
 

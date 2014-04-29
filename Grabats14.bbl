@@ -49,6 +49,12 @@ In Weber and Perseil (eds.), \emph{FHIES}.
 Lecture Notes in Computer Science~7789, pp.~194--212.
 Springer, 2012.
 
+\bibitem[SLK11]{SLK11}
+C.~Schulz, M.~L\"{o}we, H.~K\"{o}nig.
+A Categorical Framework for the Transformation of Object-oriented Systems:
+  Models and Data.
+\emph{J. Symb. Comput.} 46(3):316--337, Mar. 2011.
+
 \bibitem[WRM12]{WangRutleEtAl2012TASE}
 H.~Wang, A.~Rutle, W.~MacCaull.
 {A Formal Diagrammatic Approach to Timed Workflow Modelling}.

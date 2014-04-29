@@ -1,7 +1,39 @@
 % This file was created with JabRef 2.7b.
 % Encoding: UTF-8
 
-%% http://www.chinookprimarycarenetwork.ab.ca/
+@article{SLK11,
+ author = {Schulz, Christoph and L\"{o}we, Michael and K\"{o}nig, Harald},
+ title = {A Categorical Framework for the Transformation of Object-oriented Systems: Models and Data},
+ journal = {J. Symb. Comput.},
+ issue_date = {March, 2011},
+ volume = {46},
+ number = {3},
+ month = mar,
+ year = {2011},
+ issn = {0747-7171},
+ pages = {316--337},
+ numpages = {22},
+ url = {http://dx.doi.org/10.1016/j.jsc.2010.09.010},
+ doi = {10.1016/j.jsc.2010.09.010},
+ acmid = {1937402},
+ publisher = {Academic Press, Inc.},
+ address = {Duluth, MN, USA},
+ keywords = {Evolution, Migration, Refactoring, Transformation},
+} 
+
+@article{BoronatM10,
+  author    = {Artur Boronat and
+               Jos{\'e} Meseguer},
+  title     = {An algebraic semantics for MOF},
+  journal   = {Formal Asp. Comput.},
+  volume    = {22},
+  number    = {3-4},
+  year      = {2010},
+  pages     = {269-296},
+  ee        = {http://dx.doi.org/10.1007/s00165-009-0140-9},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
 
 @proceedings{Clavel2007,
   editor    = {Manuel Clavel and

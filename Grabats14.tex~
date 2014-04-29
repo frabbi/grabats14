@@ -47,14 +47,25 @@ A workflow modelling language called DERF was developed and afterwords it was ex
 defined the dynamic semantics of models by a transition system where the states are instances and transitions are applications of transformation rules. 
 An important observation of software systems is that very often they have different aspects such as user access, process flow, notification systems. 
 In \cite{PAHI14} we introduced the use of multiple metamodelling for designing different aspects of systems that facilitates us with abstraction and less coupling among models. 
+
 In this paper we provide the detailed semantics of multiple metamodelling with a running example from the healthcare domain. 
+The DERF workflow language is not data aware and therefore it is not possible to specify actual business logics for tasks (also known as process) 
+such as specifing \textit{preconditions} and/or \textit{postconditions}. In some other literature, \textit{Preconditions} and \textit{postconditions} are called branching conditions and 
+task/process specification respectively.
+In this article we present a new type of DPF construct named \textit{rewriting predicate} that permits us to specify model transformation rules in order to derive inferred knowledge or execute 
+\textit{preconditions} and/or \textit{postconditions} for tasks. 
+We present a graphical way of specifying \textit{preconditions} and \textit{postconditions} for tasks integrating DERF process model and Entity model. 
+A DERF workflow model provides an abstraction of process flow, an entity model provides the data structure structure, and an integrated model provides us the details of a data aware workflow model
+with graphically represented \textit{preconditions} and \textit{postconditions}. 
+\textit{Rewriting predicates} also allows us to partially specify a model and derive a complete model by applying model transformation rules. 
+This reduces the efforts required to explicitly specify the complete model of a system. 
+So while designing a software model with DPF, a designer gets different abstraction level, perspective from different granularity to understand, and flexibility to modify the specification of a system. 
+
 We used algebraic specification to realize the static and dynamic semantics of DPF specifications and the integration of multiple metamodels in this article. 
 Although other executable systems may be used, to simulate the software model designed in DPF we propose the use of Maude system \cite{Bruni2006,Clavel2007} 
 which is a high--level programming/specification/modeling language based on rewriting logic theory. 
 
-In addition, we present a new type of DPF construct named \textit{rewriting predicate} that allows us to partially specify a model and derives inferred knowledge based on model transformation rules. 
-This reduces the efforts required to explicitly specify the complete model of a system as rewriting predicates expand a partial specification to a complete specification. 
-
+In short, our main contribution in this article is as follows: 1) Extension of DPF with \textit{rewriting predicates}; 2) Integration of several metamodels; 3) Representation of DPF models in Maude. 
 The paper is organized as follows: in section \ref{lbl:rewritingpredicate} we present \textit{rewriting predicate}, in section \ref{lbl:integration} we formally represent the integration of 
 multiple metamodels, in section \ref{lbl:algebra} we provide the algebraic specification for DPF specifications, we present some related works in section \ref{lbl:relatedwork}, and 
 in section \ref{lbl:conclusion} we conclude the paper with some future directions. 
@@ -66,8 +77,8 @@ We modify the definition of \textbf{Signature} from ~\cite{Rutle10} with Definit
 
 
 \begin{definition}[Signature]\label{def:Signature}
- A (diagrammatic predicate) signature $\Sigma$ = $(P^\Sigma, \alpha^\Sigma \cup \pi^\Sigma)$ consists of a collection of predicate symbols $P^\Sigma$ with jointly injective 
- multi-maps $\alpha^\Sigma \cup \pi^\Sigma$. The map $\alpha^\Sigma$ assigns graphs to predicate symbols $p \in P^\Sigma$ and $\alpha^\Sigma(p)$ is called the arity of the predicate symbol $p$. 
+ A (diagrammatic predicate) signature $\Sigma$ = $(P^\Sigma, \alpha^\Sigma, \pi^\Sigma)$ consists of a collection of predicate symbols $P^\Sigma$ with two 
+ multi-maps $\alpha^\Sigma, \pi^\Sigma$. The map $\alpha^\Sigma$ assigns graphs to predicate symbols $p \in P^\Sigma$ and $\alpha^\Sigma(p)$ is called the arity of the predicate symbol $p$. 
  The map $\pi^\Sigma$ assigns transformation rules to predicate symbols $p \in P^\Sigma$ and $\pi^\Sigma(p)$ is called the rewriting predicate of the predicate symbol $p$. 
 \end{definition}
 
@@ -103,20 +114,24 @@ or a \textit{rewriting predicate} (denoted as $dom(\pi^\Sigma)$) iff $\pi^\Sigma
 
 
 
-Table.~\ref{tbl:predicateconstraint},~\ref{tbl:rewritingpredicate} shows a sample signature $\Sigma_2 = (P^{\Sigma_2}, \alpha^{\Sigma_2} \cup \pi^{\Sigma_2})$ where the first column of 
+Table.~\ref{tbl:predicateconstraint},~\ref{tbl:rewritingpredicate} shows a sample signature $\Sigma_2 = (P^{\Sigma_2}, \alpha^{\Sigma_2}, \pi^{\Sigma_2})$ where the first column of 
 both tables show the names of the predicates; the second, third and fourth columns of Table.~\ref{tbl:predicateconstraint} show the arities of predicates, a possible visualization 
 and the semantic interpretation respectively; the second and third columns of Table.~\ref{tbl:rewritingpredicate} show the transformation rules of predicates and a possible visualization respectively.
 For readability reasons, the semantic interpretations of \textit{predicate constraints} are presented in a set--theoretical indexed manner in Table.~\ref{tbl:predicateconstraint}, 
 although the actual semantics of each predicate constraint $p \in P^{\Sigma}$ of a sample signature $\Sigma$ is defined in \cite{Rutle10} by a set $\llbracket p \rrbracket^{\Sigma}$ of 
 graph homomorphisms $\iota : O \rightarrow \alpha^{\Sigma}(p)$ called valid instances of $p$, where $O$ may vary over all graphs. 
 For example, the valid instances of $[inverse]$ \textit{predicate constraint} of signature $\Sigma_2$ (see Table.~\ref{tbl:predicateconstraint}) are defined as follows. 
-In this situation, $\llbracket inverse \rrbracket^{\Sigma_2} = \{ \iota_1, \iota_2, \iota_3, \iota_4, \iota_5 \}$ is a set of graph homomorphisms that provides the semantics of $[inverse]$. 
+%In this situation, $\llbracket inverse \rrbracket^{\Sigma_2} = \{ \iota_1, \iota_2, \iota_3, \iota_4, \iota_5 \}$ is a set of graph homomorphisms that provides the semantics of $[inverse]$. 
+All valid instances of $\llbracket inverse \rrbracket^{\Sigma_2}$ that provides the semantics of $[inverse]$ are provided below: 
+
+
 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{inv-hom-set.pdf}
 \end{center}
 
-On the other hand, the semantics of \textit{rewriting predicates} are defined by transformation rules with negative application conditions as in Table.~\ref{tbl:rewritingpredicate}. 
+On the other hand, the semantics of \textit{rewriting predicates} are defined by coupled transformation \cite{SLK11} rules with negative application conditions as in Table.~\ref{tbl:rewritingpredicate}. 
+
 
 \begin{table}[h]\label{tbl:rewritingpredicate}    
  \caption{Rewriting predicates of a sample signature $\Sigma_2$}
@@ -125,7 +140,7 @@ On the other hand, the semantics of \textit{rewriting predicates} are defined by
     \begin{tabular}{| l | c | c | c | }    
     \hline
     \multirow{2}{*}{$p$} & \multicolumn{2}{c |}{$\pi^{\Sigma_2}(p)$} & \multirow{2}{*}{Proposed Vis.} \\ \cline{2-3}
-        & $\mathfrak{N} $ $\xleftarrow{\makebox[1cm]  n  }$  $\mathfrak{L} $ & $\mathfrak{R} $ &   \\ \hline    
+        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[1cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1}) $ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ &   \\ \hline    
     \multirow{2}{*}{[opposite]} 		& \includegraphics[width=0.19\textwidth]{inv-1.pdf} & \includegraphics[width=0.19\textwidth]{inv-R.pdf} & \multirow{2}{*}{\includegraphics[width=0.19\textwidth]{inv-vis.pdf}}  \\ \cline{2-3}
 			& \includegraphics[width=0.19\textwidth]{inv-2.pdf} & \includegraphics[width=0.19\textwidth]{inv-R.pdf} &  \\ \hline
     [composition] 	& \includegraphics[width=0.19\textwidth]{comp-L.pdf} & \includegraphics[width=0.19\textwidth]{comp-R.pdf} & \includegraphics[width=0.19\textwidth]{comp-vis.pdf}  \\ \hline 			
@@ -137,11 +152,14 @@ On the other hand, the semantics of \textit{rewriting predicates} are defined by
 \normalsize
 
 \begin{definition}[Semantics of Rewriting Predicates]
- The semantics of a rewriting predicate $p \in P^{\Sigma}$ is given by a set of transformation rules where each transformation rule $r: \mathfrak{L}  \leftarrow \mathfrak{K}  \rightarrow 
- \mathfrak{R} $ has a negative application condition and there exists a specification morphism $n: \mathfrak{L} \rightarrow \mathfrak{N} $. 
+ The semantics of a rewriting predicate $p \in P^{\Sigma_{i+1}}$ is given by a set of coupled transformation rules where each transformation 
+ rule $r: (\mathfrak{L}_i \rightarrow \mathfrak{L}_{i+1})   \leftarrow (\mathfrak{K}_i \rightarrow \mathfrak{K}_{i+1})  \rightarrow 
+ (\mathfrak{R}_i \rightarrow \mathfrak{R}_{i+1}) $ has a negative application condition and there exists a specification morphism 
+ $n: (\mathfrak{L}_i \rightarrow \mathfrak{L}_{i+1}) \rightarrow (\mathfrak{N}_i \rightarrow \mathfrak{N}_{i+1}) $. 
 \end{definition}
 
-Notice that the matching patterns $\mathfrak{L} $ and negative application conditions $\mathfrak{N} $ are represented in the same diagram in 
+Notice that the matching patterns $(\mathfrak{L}_i \rightarrow \mathfrak{L}_{i+1})$ and negative application conditions $(\mathfrak{N}_i \rightarrow \mathfrak{N}_{i+1} $ 
+are represented in the same diagram in 
 Table.~\ref{tbl:rewritingpredicate} to make it more readable. Negative application conditions are striked through in the diagram to represent that they must not exist while matching. 
 Now it is worthwhile to make a comparison between these two types of predicates. 
 \textit{Predicate constraints} do not derive any change to an instance of a specification whereas \textit{rewriting predicates} may change the strucutre of an instance. 
@@ -150,20 +168,20 @@ In order to be consistent we need to modify the definition of \textbf{Atomic Con
 
 
 \begin{definition}[Atomic Constraint]
- Given a signature $\Sigma = (P^\Sigma, \alpha^\Sigma \cup \pi^\Sigma)$, an atomic constraint $(p, \delta)$ added to a graph $S$ is given by a predicate symbol $p$ and a graph 
- homomorphism $\delta : \alpha^{\Sigma}(p) \rightarrow S$ where $p \in P^\Sigma$ is a \textit{predicate constraint}. 
+ Given a signature $\Sigma = (P^\Sigma, \alpha^\Sigma, \pi^\Sigma)$, an atomic constraint $(p, \delta)$ added to a graph $S$ is given by a predicate symbol $p$ and a graph 
+ homomorphism $\delta : \alpha^{\Sigma}(p) \rightarrow S$ where $p \in P^\Sigma$ is a predicate. 
 \end{definition}
 
 
 
 \begin{definition}[Rewriting Rule]
- Given a signature $\Sigma = (P^\Sigma, \alpha^\Sigma \cup \pi^\Sigma)$, a rewriting rule $(r, \delta)$ attached to a graph $S$ is given by a predicate symbol $r$ and a graph 
- homomorphism $\delta : \pi^{\Sigma}(r) \rightarrow S$ where $r \in P^\Sigma$ is a \textit{rewriting predicate}. 
+ Given a signature $\Sigma = (P^\Sigma, \alpha^\Sigma, \pi^\Sigma)$, a rewriting rule $(r, \delta)$ attached to a graph $S$ is given by a predicate symbol $r$ and a graph 
+ homomorphism $\delta : \pi^{\Sigma}(r) \rightarrow ((I, \iota) \rightarrow S)$ where $r \in P^\Sigma$ is a predicate. 
 \end{definition}
 
 
 \begin{definition}[Specification]
- Given a signature $\Sigma = (P^\Sigma, \alpha^\Sigma \cup \pi^\Sigma)$, a (diagrammatic) specification $\mathfrak{S} = (S, C^{\mathfrak{S}}:\Sigma, R^{\mathfrak{S}}:\Sigma )$ 
+ Given a signature $\Sigma = (P^\Sigma, \alpha^\Sigma, \pi^\Sigma)$, a (diagrammatic) specification $\mathfrak{S} = (S, C^{\mathfrak{S}}:\Sigma, R^{\mathfrak{S}}:\Sigma )$ 
  is given by 
  a graph $S$, 
  a set $C^\mathfrak{S}$ of atomic constraints $(p, \delta)$ on $S$ with $p \in dom(\alpha^\Sigma)$, and
@@ -198,7 +216,7 @@ Lets take the following requirements of a healthcare domain to develop an entity
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.65\textwidth]{entity-1.pdf}
- \caption{ a) Entity specification $\mathfrak{S}_1 = (S, C^{\mathfrak{S}_1} : \Sigma_2 , R^{\mathfrak{S}_1} : \Sigma_2)$, b) its meta model $\mathfrak{S}_2$, and c) an instance $I$ of $\mathfrak{S}_1$}
+ \caption{ a) Entity specification $\mathfrak{S}_1 = (S, C^{\mathfrak{S}_1} : \Sigma_2 , R^{\mathfrak{S}_1} : \Sigma_2)$, b) its meta model $\mathfrak{S}_2$, and c) an instance $(I,\iota)$ of $\mathfrak{S}_1$}
  \label{fig:entity-diagram}
  \end{figure}
 
@@ -231,17 +249,18 @@ and a \textit{predicate constraint} $[image-inclusion]$ over morphisms $depEmps$
 
 \begin{table}[h]\label{tbl:rewritingrules}    
  \caption{The set of rewriting rules $R^{\mathfrak{S}_1}$ of  $\mathfrak{S}_1$}
- \small
+  \tiny
  \begin{center}
     \begin{tabular}{| l | c | c | c | c | }    
     \hline
+    
     \multirow{2}{*}{$(r,\delta)$} & \multicolumn{2}{c |}{$\pi^{\Sigma_2}(r)$} & \multicolumn{2}{c |}{ $\delta(\pi^{\Sigma_2}(r))$ }\\ \cline{2-5}
-        & $\mathfrak{N}$ $\xleftarrow{\makebox[0.45cm]  n  }$  $\mathfrak{L}$ & $\mathfrak{R} $ & 
-			      $\delta(\mathfrak{N}) \xleftarrow{\makebox[0.45cm] n} \delta( \mathfrak{L})$  & $\delta(\mathfrak{R})$ \\ \hline    
+        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[0.3cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1})$ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ & 
+			      $\delta(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1}) \xleftarrow{\makebox[0.3cm] n} \delta( \mathfrak{L}_0 \rightarrow \mathfrak{L}_{1})$  & $\delta(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1})$ \\ \hline    
     \multirow{2}{*}{$([opposite], \delta_6)$}  & \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} & \includegraphics[width=0.19\textwidth]{inv-1-delta.pdf} & 
 				    \includegraphics[width=0.19\textwidth]{inv-R-delta.pdf}  \\ \cline{2-5}
 				  & \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} &  
-				  \includegraphics[width=0.19\textwidth]{inv-2-delta.pdf} & \includegraphics[width=0.19\textwidth]{inv-R-delta.pdf} \\ \hline
+				  \includegraphics[width=0.19\textwidth]{inv-2-delta.pdf} & \includegraphics[width=0.19\textwidth]{inv-R-delta.pdf} \\ \hline    
     $([composition], \delta_7)$ 		  & \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & 
 				    \includegraphics[width=0.19\textwidth]{comp-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{comp-R-delta.pdf} \\ \hline 			
     $([inheritance], \delta_8)$ 		  & \includegraphics[width=0.08\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.08\textwidth]{inheritance-R.pdf} & 
@@ -254,7 +273,7 @@ and a \textit{predicate constraint} $[image-inclusion]$ over morphisms $depEmps$
 \end{table}
 \normalsize
 
-Fig.~\ref{fig:entity-diagram}(a) shows a possible instance $I$ of $\mathfrak{S}_1$. 
+Fig.~\ref{fig:entity-diagram}(a) shows a possible instance $(I, \iota)$ of $\mathfrak{S}_1$. 
 Even though $I$ is typed by $S$, it is not a valid instance of $\mathfrak{S}_1$ since it does not satisfy the \textit{predicate constraints} $[surjective]$, $[inverse]$ and $[image-inclusion]$. 
 We explain this by a pullback operation in Fig.~\ref{fig:entity-pb}. Since $\iota^* \notin \llbracket inverse \rrbracket^{\Sigma_2}$, $I$ does not satisfy $[inverse]$. 
 Similarly we can explain why $I$ does not satisfy $[surjective]$ and $[image-inclusion]$. 
@@ -267,11 +286,11 @@ Similarly we can explain why $I$ does not satisfy $[surjective]$ and $[image-inc
  \label{fig:entity-pb}
  \end{figure}
  
-Until at this point we have not considered the execution of \textit{rewriting rules} over $I$. 
-By applying \textit{rewriting rules} over $I$ we may derive new information. 
+Until at this point we have not considered the execution of \textit{rewriting rules} over $(I, \iota)$. 
+By applying \textit{rewriting rules} over $(I, \iota)$ we may derive new information. 
 An instance of a specification where \textit{rewriting rules} are applicable is called a partial instance. 
-Once we apply the \textit{rewriting rules} $[opposite]$, $[composition]$ and $[inheritance]$ over $I$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
-Fig.~\ref{fig:entity-1-full}. We call it a complete instance of $\mathfrak{S}_1$ as no more \textit{rewriting predicates} are further applicable on $I$. 
+Once we apply the \textit{rewriting rules} $[opposite]$, $[composition]$ and $[inheritance]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
+Fig.~\ref{fig:entity-1-full}. We call it a complete instance of $\mathfrak{S}_1$ as no more \textit{rewriting predicates} are further applicable on $(I, \iota)$. 
 This complete instance is a valid instance of $\mathfrak{S}_1$ as it satisfies all atomic constraints. 
 Now it is easy to understand the motivation of using \textit{rewriting predicates} in DPF as it permits us to specify partial instance of a specification. 
 We may utilize the reasoning capability of \textit{rewriting predicates} to derive a complete instance from a partially specified instance. 
@@ -281,7 +300,7 @@ We may utilize the reasoning capability of \textit{rewriting predicates} to deri
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.65\textwidth]{entity-1-full.pdf}
- \caption{ a) Entity specification $\mathfrak{S}_1 = (S, C^{\mathfrak{S}_1} : \Sigma_2,  R^{\mathfrak{S}_1} : \Sigma_2)$ and  b) a complete instance $I$ of $\mathfrak{S}_1$}
+ \caption{ a) Entity specification $\mathfrak{S}_1 = (S, C^{\mathfrak{S}_1} : \Sigma_2,  R^{\mathfrak{S}_1} : \Sigma_2)$ and  b) a complete instance $(I, \iota)$ of $\mathfrak{S}_1$}
  \label{fig:entity-1-full}
  \end{figure}
 
@@ -292,14 +311,16 @@ We may utilize the reasoning capability of \textit{rewriting predicates} to deri
 \begin{definition}[Application of Rewriting Rules]
  Let $(\Sigma_1 \rhd S_1, \mathfrak{S}_1, \Sigma_2)$ be a modelling formalism where specification $\mathfrak{S}_1 = (S_1, C^{\mathfrak{S}_1}:\Sigma_2, R^{\mathfrak{S}_1}:\Sigma_2)$ 
  has a set $R^{\mathfrak{S}_1}$ of rewriting rules $(r, \delta)$ on $S_1$.
- Each rewriting rule $(r, \delta)$ is associated with a set of transformation rules $\pi^{\Sigma_2}(r)$. 
+ Each rewriting rule $(r, \delta)$ is associated with a set of coupled transformation rules $\pi^{\Sigma_2}(r)$. 
 Each transformation rule $t \in \pi^{\Sigma_2}(r)$ has a negative application condition. 
-A rule $t: \mathfrak{L} \leftarrow \mathfrak{K} \rightarrow  \mathfrak{R}$ is applicable over $\mathfrak{S}_0 \rhd S_1$ 
-if there is a match $m : \delta( \mathfrak{L}) \rightarrow \mathfrak{S}_0 \rhd S_1$ 
-and there does not exist any match to the negative application condition, $q : \delta( \mathfrak{N}) \rightarrow \mathfrak{S}_0 \rhd S_1$ such that $m = n ; q$. 
+A rule $t: (\mathfrak{L}_0 \rightarrow \mathfrak{L}_1) \leftarrow (\mathfrak{K}_0 \rightarrow \mathfrak{K}_1) \rightarrow  (\mathfrak{R}_0 \rightarrow \mathfrak{R}_1)$ 
+is applicable over $\mathfrak{S}_0 \rhd S_1$ 
+if there is a match $m : \delta( \mathfrak{L}_0 \rightarrow \mathfrak{L}_1) \rightarrow (\mathfrak{S}_0 \rightarrow \mathfrak{S}_1)$ 
+and there does not exist any match to the negative application condition, $q : \delta( \mathfrak{N}_0 \rightarrow \mathfrak{N}_1) \rightarrow (\mathfrak{S}_0 \rightarrow \mathfrak{S}_1)$ 
+such that $m = n ; q$. 
 
 \begin{center}
-\includegraphics[width=0.4\textwidth]{dpo2.pdf}
+\includegraphics[width=0.5\textwidth]{dpo.pdf}
 \end{center}
 \end{definition}
 
@@ -309,14 +330,14 @@ and there does not exist any match to the negative application condition, $q : \
  a graph $S$, 
  a set $C^\mathfrak{S}$ of atomic constraints $(p, \delta)$ on $S$ with $p \in dom(\alpha^\Sigma)$, and
  a set $R^\mathfrak{S}$ of rewriting rules $(r, \delta)$ on $S$ with $r \in dom(\pi^\Sigma)$. 
- An instance $I$ is a \textit{partial instance} of $\mathfrak{S}$ if there exist some rewriting rules $(r, \delta) \in R^{\mathfrak{S}}$ those are applicable over $I$. 
- An instance $I$ is a \textit{complete instance} of $\mathfrak{S}$ if there does not exist any rewriting rule $(r, \delta) \in R^{\mathfrak{S}}$ that is applicable over $I$. 
+ An instance $(I, \iota)$ is a \textit{partial instance} of $\mathfrak{S}$ if there exist some rewriting rules $(r, \delta) \in R^{\mathfrak{S}}$ those are applicable over $(I, \iota)$. 
+ An instance $(I, \iota)$ is a \textit{complete instance} of $\mathfrak{S}$ if there does not exist any rewriting rule $(r, \delta) \in R^{\mathfrak{S}}$ that is applicable over $(I, \iota)$. 
 
 \end{definition}
 
 
 \begin{remark}
-A complete instance $I$ is a valid instance of specification $\mathfrak{S}$ if it does not violate any constraint from $C^{\mathfrak{S}}$. We denote it as $I \RHD \mathfrak{S}$
+A complete instance $(I, \iota)$ is a valid instance of specification $\mathfrak{S}$ if it does not violate any constraint from $C^{\mathfrak{S}}$. We denote it as $(I, \iota) \RHD \mathfrak{S}$
 \end{remark}
 
 
@@ -331,13 +352,13 @@ In this section we formally define the integration of specifications and provide
 \end{definition}
 
 \begin{proposition}
- The integration of two complete and valid instances $\mathfrak{S}_0, \mathfrak{T}_0$ of specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively is a partial instance 
- $\mathfrak{J}_0$ of $\mathfrak{J}$.  
+ The integration of two complete and valid instances $(S_0, \iota^S), (T_0, \iota^T)$ of specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively is a partial instance 
+ $(J_0, \iota^J)$ of $\mathfrak{J}$.  
 \end{proposition}
 
-The integrated partial instance $\mathfrak{J}_0$ is a typed specification $\mathfrak{J}_0 \rhd J$ that becomes a complete instance $\mathfrak{J}_0^*$ of the integrated specification 
+The integrated partial instance $(J_0, \iota^J)$ is a typed specification $J_0 \rhd J$ that becomes a complete instance $J_0^*$ of the integrated specification 
 $\mathfrak{J}$ by iterative applications of the set $R^{\mathfrak{J}}$ of rewriting rules. 
-Applying pullback over a complete integrated specification $\mathfrak{J}_0^*$ we get two instances $\mathfrak{S}_0'$ and $\mathfrak{T}_0'$ of 
+Applying pullback over a complete integrated specification $J_0^*$ we get two instances $(S_0', \iota^S)$ and $(T_0', \iota^T)$ of 
 specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively.
 
 \begin{center}
@@ -345,9 +366,9 @@ specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively.
 \end{center}
 
 \noindent
-$\mathfrak{S}_0'$ and $\mathfrak{T}_0'$ may be partial instances with respect to their specifications and further rewriting rules may be applicable 
-from the set $R^{\mathfrak{S}}$ and $R^{\mathfrak{T}}$. The complete and valid instances $\mathfrak{S}_0^*, \mathfrak{T}_0^*$ of $\mathfrak{S}$ and $\mathfrak{T}$ after applying rewriting rules over 
-$\mathfrak{S}_0', \mathfrak{T}_0'$ may be integrated again and be used for further derivation. This derivation process can run again and again until no further rewriting rule is applicable: 
+$(S_0', \iota^S)$ and $(T_0', \iota^T)$ may be partial instances with respect to their specifications and further rewriting rules may be applicable 
+from the set $R^{\mathfrak{S}}$ and $R^{\mathfrak{T}}$. The complete and valid instances $(S_0^*, \iota^S), (T_0^*, \iota^T)$ of $\mathfrak{S}$ and $\mathfrak{T}$ after applying rewriting rules, 
+may be integrated again and be used for further derivation. This derivation process can run again and again until no further rewriting rule is applicable: 
 
 \begin{center}
 \includegraphics[width=0.35\textwidth]{fixpoint.pdf}
@@ -402,10 +423,10 @@ In the transformation rule we included a \textit{condition} of the form $(\foral
     \begin{tabular}{| l | c | c | }    
     \hline
     \multirow{2}{*}{$(r,\delta)$} & \multicolumn{2}{c |}{$\pi^{\Sigma_1}(r)$}  \\ \cline{2-3}
-        & $\mathfrak{N}$ $\xleftarrow{\makebox[0.45cm]  n  }$  $\mathfrak{L}$ & $\mathfrak{R} $  \\ \hline    
+        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_1)$ $\xleftarrow{\makebox[0.45cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_1)$ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_1) $  \\ \hline    
     \multirow{4}{*}{$([HighBP], \delta_1)$}  & \includegraphics[width=0.31\textwidth]{pre-post-example.pdf} & \includegraphics[width=0.31\textwidth]{pre-post-example-R.pdf} \\ \cline{2-3}
 				    & \multicolumn{2}{c |}{ $\delta(\pi^{\Sigma_1}(r))$ } \\ \cline{2-3}
-				    & $\delta(\mathfrak{N}) \xleftarrow{\makebox[0.45cm] n} \delta( \mathfrak{L})$  & $\delta(\mathfrak{R})$ \\ \cline{2-3}
+				    & $\delta(\mathfrak{N}_0 \rightarrow \mathfrak{N}_1) \xleftarrow{\makebox[0.45cm] n} \delta( \mathfrak{L}_0 \rightarrow \mathfrak{L}_1)$  & $\delta(\mathfrak{R}_0 \rightarrow \mathfrak{R}_i)$ \\ \cline{2-3}
 				    & \includegraphics[width=0.31\textwidth]{pre-post-example-L-delta.pdf} & \includegraphics[width=0.31\textwidth]{pre-post-example-R-delta.pdf}  \\ 
 				    
     \hline    
@@ -520,7 +541,7 @@ If the derived specification is found to be a valid instance of $\mathfrak{S}_{i
 Terms using the $rel$ and $sigmap$ operators presented in the above maude specification are used to hold a typed graph and a signature map respectively using multimap. 
 The arguments of a $rel$ term represents a $name$, $type$, $domain$ and $range$ respectively. 
 Here $name$ is either referring to the name of a vertex or a morphism depending on the $type$. 
-The arguments of a $sigmap$ term represents an $Id$, $name$ of the vertex or morphism, and \textit{predicate name} respectively. 
+The arguments of a $sigmap$ term represents an $Id$, $name$ of a vertex or morphism, and \textit{predicate name} respectively. 
 A sample maude specification is provided below that represents the specification $\mathfrak{S}_1$ and its instance $I$ from Fig.~\ref{fig:entity-diagram}. 
 The subterm \textit{rel(``G0'', ``TypeOf'', ``Employee'', ``Class'')} represents that $Employee$ is a vertex of type $Class$, and 
 the subterm \textit{rel(``:Typeof'', ``TypeOf'', ``Joseph'', ``Employee'')} represents that $Joseph$ is a vertex of type $Employee$.
