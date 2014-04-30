@@ -91,6 +91,7 @@ or a \textit{rewriting predicate} (denoted as $dom(\pi^\Sigma)$) iff $\pi^\Sigma
 
 \begin{table}[h]\label{tbl:predicateconstraint}
  \caption{Predicate constraints of a sample signature $\Sigma_2$}
+ \small
  \begin{center}
     \begin{tabular}{| l | c | c | p{6cm} | }    
     \hline
@@ -107,7 +108,7 @@ or a \textit{rewriting predicate} (denoted as $dom(\pi^\Sigma)$) iff $\pi^\Sigma
     \end{tabular}
     \end{center}
 \end{table}
-
+\normalsize
 
 
 
@@ -141,10 +142,10 @@ On the other hand, the semantics of \textit{rewriting predicates} are defined by
     \hline
     \multirow{2}{*}{$p$} & \multicolumn{2}{c |}{$\pi^{\Sigma_2}(p)$} & \multirow{2}{*}{Proposed Vis.} \\ \cline{2-3}
         & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[1cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1}) $ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ &   \\ \hline    
-    \multirow{2}{*}{[opposite]} 		& \includegraphics[width=0.19\textwidth]{inv-1.pdf} & \includegraphics[width=0.19\textwidth]{inv-R.pdf} & \multirow{2}{*}{\includegraphics[width=0.19\textwidth]{inv-vis.pdf}}  \\ \cline{2-3}
-			& \includegraphics[width=0.19\textwidth]{inv-2.pdf} & \includegraphics[width=0.19\textwidth]{inv-R.pdf} &  \\ \hline
-    [composition] 	& \includegraphics[width=0.19\textwidth]{comp-L.pdf} & \includegraphics[width=0.19\textwidth]{comp-R.pdf} & \includegraphics[width=0.19\textwidth]{comp-vis.pdf}  \\ \hline 			
-    [inheritance] 	& \includegraphics[width=0.12\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.12\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.05\textwidth]{inheritance-vis.pdf}  \\ 
+    \multirow{2}{*}{[opposite]} 		& \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} & \multirow{2}{*}{\includegraphics[width=0.13\textwidth]{inv-vis.pdf}}  \\ \cline{2-3}
+			& \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} &  \\ \hline
+    [composition] 	& \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & \includegraphics[width=0.13\textwidth]{comp-vis.pdf}  \\ \hline 			
+    [inheritance] 	& \includegraphics[width=0.09\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.09\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.03\textwidth]{inheritance-vis.pdf}  \\ 
     \hline    
     \end{tabular}
     \end{center}
@@ -158,7 +159,7 @@ On the other hand, the semantics of \textit{rewriting predicates} are defined by
  $n: (\mathfrak{L}_i \rightarrow \mathfrak{L}_{i+1}) \rightarrow (\mathfrak{N}_i \rightarrow \mathfrak{N}_{i+1}) $. 
 \end{definition}
 
-Notice that the matching patterns $(\mathfrak{L}_i \rightarrow \mathfrak{L}_{i+1})$ and negative application conditions $(\mathfrak{N}_i \rightarrow \mathfrak{N}_{i+1} $ 
+Notice that the matching patterns $(\mathfrak{L}_i \rightarrow \mathfrak{L}_{i+1})$ and negative application conditions $(\mathfrak{N}_i \rightarrow \mathfrak{N}_{i+1}) $ 
 are represented in the same diagram in 
 Table.~\ref{tbl:rewritingpredicate} to make it more readable. Negative application conditions are striked through in the diagram to represent that they must not exist while matching. 
 Now it is worthwhile to make a comparison between these two types of predicates. 
@@ -273,23 +274,28 @@ and a \textit{predicate constraint} $[image-inclusion]$ over morphisms $depEmps$
 \end{table}
 \normalsize
 
+\begin{figure}[t]
+\centering
+ \includegraphics[width=0.9\textwidth]{entity-1-pullback.pdf}
+ \caption{ Pullback $\alpha^{\Sigma_2}([inv]) \xleftarrow{\iota^*} O^* \xrightarrow{\delta_1^*} I $ of $\alpha^{\Sigma_2}([inv]) \xrightarrow{\delta_1} S \xleftarrow{\iota} I $ }
+ \label{fig:entity-pb}
+ \end{figure}
+
 Fig.~\ref{fig:entity-diagram}(a) shows a possible instance $(I, \iota)$ of $\mathfrak{S}_1$. 
 Even though $I$ is typed by $S$, it is not a valid instance of $\mathfrak{S}_1$ since it does not satisfy the \textit{predicate constraints} $[surjective]$, $[inverse]$ and $[image-inclusion]$. 
 We explain this by a pullback operation in Fig.~\ref{fig:entity-pb}. Since $\iota^* \notin \llbracket inverse \rrbracket^{\Sigma_2}$, $I$ does not satisfy $[inverse]$. 
 Similarly we can explain why $I$ does not satisfy $[surjective]$ and $[image-inclusion]$. 
 
 
-\begin{figure}[h]
-\centering
- \includegraphics[width=0.9\textwidth]{entity-1-pullback.pdf}
- \caption{ Pullback $\alpha^{\Sigma_2}([inv]) \xleftarrow{\iota^*} O^* \xrightarrow{\delta_1^*} I $ of $\alpha^{\Sigma_2}([inv]) \xrightarrow{\delta_1} S \xleftarrow{\iota} I $ }
- \label{fig:entity-pb}
- \end{figure}
+
  
 Until at this point we have not considered the execution of \textit{rewriting rules} over $(I, \iota)$. 
-By applying \textit{rewriting rules} over $(I, \iota)$ we may derive new information. 
+By applying \textit{rewriting rules} from Table.~\ref{tbl:rewritingrules} over $(I, \iota)$ we may derive new information. 
 An instance of a specification where \textit{rewriting rules} are applicable is called a partial instance. 
-Once we apply the \textit{rewriting rules} $[opposite]$, $[composition]$ and $[inheritance]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
+The \textit{rewriting predicate} $[opposite]$ is used to derive morphism $y \xrightarrow{g} x$ (if it does not exist) from the existance of a morphism $x \xrightarrow{f} y$ or vice versa; 
+$[composition]$ is used to derive morphism $z \xrightarrow{h} x$ (if it does not exist) from the existance of morphisms $z \xrightarrow{g} y$ and $y \xrightarrow{f} x$; 
+$[inheritance]$ derives a typing morphism $x \rightarrow Z$ (if it is not present) if $x \rightarrow Y$ and $Z$ is a superclass of $Y$. 
+Once we apply the \textit{rewriting rules} for $[opposite]$, $[composition]$ and $[inheritance]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
 Fig.~\ref{fig:entity-1-full}. We call it a complete instance of $\mathfrak{S}_1$ as no more \textit{rewriting predicates} are further applicable on $(I, \iota)$. 
 This complete instance is a valid instance of $\mathfrak{S}_1$ as it satisfies all atomic constraints. 
 Now it is easy to understand the motivation of using \textit{rewriting predicates} in DPF as it permits us to specify partial instance of a specification. 
@@ -345,11 +351,25 @@ A complete instance $(I, \iota)$ is a valid instance of specification $\mathfrak
 In this section we formally define the integration of specifications and provide its syntax and semantics with a running example. 
 
 \begin{definition}[Integrated Specification]
- Given two complete and valid specifications $\mathfrak{S}$ and $\mathfrak{T}$, their integration $\mathfrak{J} = (J, C^{\mathfrak{J}}: \Sigma^J, R^{\mathfrak{J}}:\Sigma^J)$ is given 
- by a graph $J = (S \uplus T)$: a disjoint union of the underlying graphs of $\mathfrak{S}$ and $\mathfrak{T}$, 
- a set $C^{\mathfrak{J}}$ of atomic constraints $(p, \delta)$ on $J$ with $p \in dom(\alpha^{\Sigma^J})$ and 
- a set of $R^{\mathfrak{J}}$ of rewriting rules $(r,\delta)$ on $J$ with $r \in dom(\pi^{\Sigma^J})$.
+ Given two complete and valid specifications $\mathfrak{S} = (S, C^{\mathfrak{S}}: \Sigma^S, R^{\mathfrak{S}}: \Sigma^S)$ and 
+ $\mathfrak{T} = (T, C^{\mathfrak{T}}: \Sigma^T, R^{\mathfrak{T}}: \Sigma^T)$, 
+ their integration $\mathfrak{J} = (J, C^{\mathfrak{J}}: \Sigma^J, R^{\mathfrak{J}}:\Sigma^J)$ is given 
+ %by a graph $J = (S \uplus T)$: a disjoint union of the underlying graphs of $\mathfrak{S}$ and $\mathfrak{T}$, 
+ %a set $C^{\mathfrak{J}}$ of atomic constraints $(p, \delta)$ on $J$ with $p \in dom(\alpha^{\Sigma^J})$ 
+ a set $R^{\mathfrak{J}}$ of rewriting rules $(r,\delta)$ on $J$ with $r \in dom(\pi^{\Sigma^J})$ and
+ by two inclusion specification morphisms $\phi^S : \mathfrak{S} \hookrightarrow \mathfrak{J}$, $\phi^T : \mathfrak{T} \hookrightarrow \mathfrak{J}$ 
+ such that the following diagram commutes:
+  
+\begin{center}
+\includegraphics[width=0.4\textwidth]{spec-morphism.pdf}
+\end{center}  
+ 
 \end{definition}
+
+\begin{remark}
+ The underlying graph $J = (S \uplus T)$ of the integrated specification $\mathfrak{J}$ is a disjoint union of the underlying graphs of $\mathfrak{S}$ and $\mathfrak{T}$. 
+ The set $R^{\mathfrak{J}}$ of rewriting rules $(r,\delta)$ on $J$ is defined by a set of coupled transformation rules. 
+\end{remark}
 
 \begin{proposition}
  The integration of two complete and valid instances $(S_0, \iota^S), (T_0, \iota^T)$ of specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively is a partial instance 
@@ -438,7 +458,7 @@ In the transformation rule we included a \textit{condition} of the form $(\foral
  
 \section{Algebraic Specification for Metamodel Integration}\label{lbl:algebra}
 One of our intension to use algebraic specification for DPF metamodelling is to develop an execution environment for DPF framework where one could design and simulate a software model with 
-multiple metamodels. Fig.~\ref{fig:dpfmaude} shows a proposed system architecture for DPF simulate tool where maude tool has been used as an engine to perform 1) Type checking, 2) Conformance checking,
+multiple metamodels. Fig.~\ref{fig:dpfmaude} shows a proposed system architecture for DPF simulation tool where maude tool has been used as an engine to perform 1) Type checking, 2) Conformance checking,
 and 3) Reasoning / derivation. During the design phase, the tool may be used to provide feedback to the designer if the model he is working on satisfies its metamodel or not. 
 We intend to use a user-friendly user interface (UI) to support better user experience for the developer to simulate a model instance. 
 During the simulation phase, maude tool will be used to produce the instances of a software model. 
@@ -448,7 +468,7 @@ During the simulation phase, maude tool will be used to produce the instances of
  
  \begin{figure}[h]
 \centering
- \includegraphics[width=\textwidth]{dpfmaude.png}
+ \includegraphics[width=0.8\textwidth]{dpfmaude.png}
  \caption{System architecture for DPF simulation tool}
  \label{fig:dpfmaude}
  \end{figure}
