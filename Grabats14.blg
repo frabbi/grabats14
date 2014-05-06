@@ -3,46 +3,44 @@ The top-level auxiliary file: Grabats14.aux
 The style file: eceasst.bst
 Database file #1: ./literature/bibliography_strings_dpf.bib
 Database file #2: ./literature/bibliography_cli.bib
-Warning--to sort, need author, organization, or key in HTN
-You've used 10 entries,
+You've used 9 entries,
             2580 wiz_defined-function locations,
-            973 strings with 21292 characters,
-and the built_in function-call counts, 4035 in all, are:
-= -- 316
-> -- 217
+            969 strings with 21073 characters,
+and the built_in function-call counts, 3822 in all, are:
+= -- 296
+> -- 210
 < -- 2
-+ -- 82
-- -- 79
-* -- 329
-:= -- 544
-add.period$ -- 36
-call.type$ -- 10
-change.case$ -- 58
-chr.to.int$ -- 10
-cite$ -- 12
-duplicate$ -- 160
-empty$ -- 354
-format.name$ -- 91
-if$ -- 796
++ -- 79
+- -- 76
+* -- 316
+:= -- 521
+add.period$ -- 34
+call.type$ -- 9
+change.case$ -- 54
+chr.to.int$ -- 9
+cite$ -- 9
+duplicate$ -- 151
+empty$ -- 332
+format.name$ -- 88
+if$ -- 750
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 7
-newline$ -- 60
+newline$ -- 56
 num.names$ -- 29
-pop$ -- 47
+pop$ -- 39
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 72
 quote$ -- 0
-skip$ -- 180
+skip$ -- 173
 stack$ -- 0
-substring$ -- 237
-swap$ -- 53
+substring$ -- 229
+swap$ -- 55
 text.length$ -- 1
-text.prefix$ -- 24
+text.prefix$ -- 23
 top$ -- 0
-type$ -- 78
-warning$ -- 1
+type$ -- 66
+warning$ -- 0
 while$ -- 41
-width$ -- 12
-write$ -- 89
-(There was 1 warning)
+width$ -- 11
+write$ -- 82

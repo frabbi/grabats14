@@ -45,29 +45,21 @@ A metamodel specification gives us a modelling language, the specification of a 
 DPF has been extended in ~\cite{RutleMacCaullEtAl2012ECMFA,RutleWMFHIES12} for behavioural modelling. 
 A workflow modelling language called DERF was developed and afterwords it was extended in \cite{WangRutleEtAl2012TASE} to define (static) semantics for timed and compensable workflow models and 
 defined the dynamic semantics of models by a transition system where the states are instances and transitions are applications of transformation rules. 
-An important observation of software systems is that very often they have different aspects such as user access, process flow, notification systems. 
-In \cite{PAHI14} we introduced the use of multiple metamodelling for designing different aspects of systems that facilitates us with abstraction and less coupling among models. 
 
-In this paper we provide the detailed semantics of multiple metamodelling with a running example from the healthcare domain. 
-The DERF workflow language is not data aware and therefore it is not possible to specify actual business logics for tasks (also known as process) 
-such as specifing \textit{preconditions} and/or \textit{postconditions}. In some other literature, \textit{Preconditions} and \textit{postconditions} are called branching conditions and 
-task/process specification respectively.
-In this article we present a new type of DPF construct named \textit{rewriting predicate} that permits us to specify model transformation rules in order to derive inferred knowledge or execute 
-\textit{preconditions} and/or \textit{postconditions} for tasks. 
-We present a graphical way of specifying \textit{preconditions} and \textit{postconditions} for tasks integrating DERF process model and Entity model. 
-A DERF workflow model provides an abstraction of process flow, an entity model provides the data structure structure, and an integrated model provides us the details of a data aware workflow model
-with graphically represented \textit{preconditions} and \textit{postconditions}. 
-\textit{Rewriting predicates} also allows us to partially specify a model and derive a complete model by applying model transformation rules. 
+
+In this article we present a new type of DPF construct named \textit{rewriting predicate} that permits us to specify model transformation rules in order to derive inferred knowledge. 
+We present a graphical way of specifying \textit{rewriting predicates} allowing us to partially specify a model and derive a complete model by applying model transformation rules. 
 This reduces the efforts required to explicitly specify the complete model of a system. 
-So while designing a software model with DPF, a designer gets different abstraction level, perspective from different granularity to understand, and flexibility to modify the specification of a system. 
+So while designing a software model with DPF, a designer gets different abstraction level, perspective from different granularity to understand, 
+and ability to develop a rewriting system graphically using DPF. 
 
-We used algebraic specification to realize the static and dynamic semantics of DPF specifications and the integration of multiple metamodels in this article. 
+We used algebraic specification to realize the static and dynamic semantics of DPF specifications. 
 Although other executable systems may be used, to simulate the software model designed in DPF we propose the use of Maude system \cite{Bruni2006,Clavel2007} 
 which is a high--level programming/specification/modeling language based on rewriting logic theory. 
 
-In short, our main contribution in this article is as follows: 1) Extension of DPF with \textit{rewriting predicates}; 2) Integration of several metamodels; 3) Representation of DPF models in Maude. 
-The paper is organized as follows: in section \ref{lbl:rewritingpredicate} we present \textit{rewriting predicate}, in section \ref{lbl:integration} we formally represent the integration of 
-multiple metamodels, in section \ref{lbl:algebra} we provide the algebraic specification for DPF specifications, we present some related works in section \ref{lbl:relatedwork}, and 
+In short, our main contribution in this article is as follows: 1) Extension of DPF with \textit{rewriting predicates}; 2) Representation of DPF models in Maude. 
+The paper is organized as follows: in section \ref{lbl:rewritingpredicate} we present \textit{rewriting predicate}, in section \ref{lbl:algebra} we provide the algebraic specification for 
+DPF specifications, we present some related works in section \ref{lbl:relatedwork}, and 
 in section \ref{lbl:conclusion} we conclude the paper with some future directions. 
 
 \section{Rewriting Predicate}\label{lbl:rewritingpredicate}
@@ -144,8 +136,8 @@ On the other hand, the semantics of \textit{rewriting predicates} are defined by
         & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[1cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1}) $ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ &   \\ \hline    
     \multirow{2}{*}{[opposite]} 		& \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} & \multirow{2}{*}{\includegraphics[width=0.13\textwidth]{inv-vis.pdf}}  \\ \cline{2-3}
 			& \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} &  \\ \hline
-    [composition] 	& \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & \includegraphics[width=0.13\textwidth]{comp-vis.pdf}  \\ \hline 			
-    [inheritance] 	& \includegraphics[width=0.09\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.09\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.03\textwidth]{inheritance-vis.pdf}  \\ 
+    [composition] 	& \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & \includegraphics[width=0.13\textwidth]{comp-vis.pdf}  \\ %\hline 			
+    %[inheritance] 	& \includegraphics[width=0.17\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.17\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.04\textwidth]{inheritance-vis.pdf}  \\ 
     \hline    
     \end{tabular}
     \end{center}
@@ -203,11 +195,11 @@ Lets take the following requirements of a healthcare domain to develop an entity
 
 \textbf{4.} \textit{An employee who is involved in a ward, must work in the controlling department. }
 
-\textbf{5.} \textit{Every person has a name. }
+%\textbf{5.} \textit{Every person has a name. }
 
-\textbf{6.} \textit{A person could be a Patient or an Employee. }
+%\textbf{6.} \textit{A person could be a Patient or an Employee. }
 
-\textbf{7.} \textit{Patients systolic and diastolic blood pressure records are natural numbers. }
+\textbf{5.} \textit{Patients systolic and diastolic blood pressure records are natural numbers. }
 
 
 
@@ -257,24 +249,25 @@ and a \textit{predicate constraint} $[image-inclusion]$ over morphisms $depEmps$
 
 \begin{table}[h]\label{tbl:rewritingrules}    
  \caption{The set of rewriting rules $R^{\mathfrak{S}_1}$ of  $\mathfrak{S}_1$}
-  \tiny
+  \small
  \begin{center}
     \begin{tabular}{| l | c | c | c | c | }    
     \hline
     
     \multirow{2}{*}{$(r,\delta)$} & \multicolumn{2}{c |}{$\pi^{\Sigma_2}(r)$} & \multicolumn{2}{c |}{ $\delta(\pi^{\Sigma_2}(r))$ }\\ \cline{2-5}
-        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[0.3cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1})$ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ & 
-			      $\delta(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1}) \xleftarrow{\makebox[0.3cm] n} \delta( \mathfrak{L}_0 \rightarrow \mathfrak{L}_{1})$  & $\delta(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1})$ \\ \hline    
+        & \tiny $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[0.3cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1})$ & \tiny $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ & 
+			      \tiny $\delta(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1}) \xleftarrow{\makebox[0.3cm] n} \delta( \mathfrak{L}_0 \rightarrow \mathfrak{L}_{1})$  & \tiny $\delta(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1})$ \\ \hline    
+    \small
     \multirow{2}{*}{$([opposite], \delta_6)$}  & \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} & \includegraphics[width=0.19\textwidth]{inv-1-delta.pdf} & 
 				    \includegraphics[width=0.19\textwidth]{inv-R-delta.pdf}  \\ \cline{2-5}
 				  & \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} &  
 				  \includegraphics[width=0.19\textwidth]{inv-2-delta.pdf} & \includegraphics[width=0.19\textwidth]{inv-R-delta.pdf} \\ \hline    
     $([composition], \delta_7)$ 		  & \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & 
-				    \includegraphics[width=0.19\textwidth]{comp-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{comp-R-delta.pdf} \\ \hline 			
-    $([inheritance], \delta_8)$ 		  & \includegraphics[width=0.08\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.08\textwidth]{inheritance-R.pdf} & 
-				    \includegraphics[width=0.10\textwidth]{inheritance-L-delta.pdf} & \includegraphics[width=0.10\textwidth]{inheritance-R-delta.pdf} \\ \hline
-    $([inheritance], \delta_9)$ 		  & \includegraphics[width=0.08\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.08\textwidth]{inheritance-R.pdf} & 
-				    \includegraphics[width=0.10\textwidth]{inheritance2-L-delta.pdf} & \includegraphics[width=0.10\textwidth]{inheritance2-R-delta.pdf} \\ 				    
+				    \includegraphics[width=0.19\textwidth]{comp-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{comp-R-delta.pdf} \\ 
+    %$([inheritance], \delta_8)$ 		  & \includegraphics[width=0.16\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.16\textwidth]{inheritance-R.pdf} & 
+    %			    \includegraphics[width=0.19\textwidth]{inheritance-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{inheritance-R-delta.pdf} \\ \hline
+    %$([inheritance], \delta_9)$ 		  & \includegraphics[width=0.16\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.16\textwidth]{inheritance-R.pdf} & 
+    %				    \includegraphics[width=0.2\textwidth]{inheritance2-L-delta.pdf} & \includegraphics[width=0.2\textwidth]{inheritance2-R-delta.pdf} \\ 				    
     \hline    
     \end{tabular}
     \end{center}
@@ -296,12 +289,12 @@ By applying \textit{rewriting rules} from Table.~\ref{tbl:rewritingrules} over $
 An instance of a specification where \textit{rewriting rules} are applicable is called a partial instance. 
 The \textit{rewriting predicate} $[opposite]$ is used to derive morphism $y \xrightarrow{g} x$ (if it does not exist) from the existance of a morphism $x \xrightarrow{f} y$ or vice versa; 
 $[composition]$ is used to derive morphism $z \xrightarrow{h} x$ (if it does not exist) from the existance of morphisms $z \xrightarrow{g} y$ and $y \xrightarrow{f} x$; 
-$[inheritance]$ derives a typing morphism $x \rightarrow Z$ (if it is not present) if $x \rightarrow Y$ and $Z$ is a superclass of $Y$. 
-Once we apply the \textit{rewriting rules} for $[opposite]$, $[composition]$ and $[inheritance]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
+%$[inheritance]$ derives a typing morphism $x \rightarrow Z$ (if it is not present) if $x \rightarrow Y$ and $Z$ is a superclass of $Y$. 
+Once we apply the \textit{rewriting rules} for $[opposite]$, $[composition]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
 Fig.~\ref{fig:entity-1-full}. We call it a complete instance of $\mathfrak{S}_1$ as no more \textit{rewriting predicates} are further applicable on $(I, \iota)$. 
 This complete instance is a valid instance of $\mathfrak{S}_1$ as it satisfies all atomic constraints. 
 Now it is easy to understand the motivation of using \textit{rewriting predicates} in DPF as it permits us to specify partial instance of a specification. 
-We may utilize the reasoning capability of \textit{rewriting predicates} to derive a complete instance from a partially specified instance. 
+We may utilize the rewriting capability of \textit{rewriting predicates} to derive a complete instance from a partially specified instance. 
 
 
 
@@ -349,119 +342,78 @@ A complete instance $(I, \iota)$ is a valid instance of specification $\mathfrak
 \end{remark}
 
 
-\section{Integration of Multiple Metamodels}\label{lbl:integration}
-In this section we formally define the integration of specifications and provide its syntax and semantics with a running example. 
 
-\begin{definition}[Integrated Specification]
- Given two complete and valid specifications $\mathfrak{S} = (S, C^{\mathfrak{S}}: \Sigma^S, R^{\mathfrak{S}}: \Sigma^S)$ and 
- $\mathfrak{T} = (T, C^{\mathfrak{T}}: \Sigma^T, R^{\mathfrak{T}}: \Sigma^T)$, 
- their integration $\mathfrak{J} = (J, C^{\mathfrak{J}}: \Sigma^J, R^{\mathfrak{J}}:\Sigma^J)$ is given 
- %by a graph $J = (S \uplus T)$: a disjoint union of the underlying graphs of $\mathfrak{S}$ and $\mathfrak{T}$, 
- %a set $C^{\mathfrak{J}}$ of atomic constraints $(p, \delta)$ on $J$ with $p \in dom(\alpha^{\Sigma^J})$ 
- a set $R^{\mathfrak{J}}$ of rewriting rules $(r,\delta)$ on $J$ with $r \in dom(\pi^{\Sigma^J})$ and
- by two inclusion specification morphisms $\phi^S : \mathfrak{S} \hookrightarrow \mathfrak{J}$, $\phi^T : \mathfrak{T} \hookrightarrow \mathfrak{J}$ 
- such that the following diagram commutes:
-  
-\begin{center}
-\includegraphics[width=0.4\textwidth]{spec-morphism.pdf}
-\end{center}  
- 
-\end{definition}
-
-\begin{remark}
- The underlying graph $J = (S \uplus T)$ of the integrated specification $\mathfrak{J}$ is a disjoint union of the underlying graphs of $\mathfrak{S}$ and $\mathfrak{T}$. 
- The set $R^{\mathfrak{J}}$ of rewriting rules $(r,\delta)$ on $J$ is defined by a set of coupled transformation rules. 
-\end{remark}
-
-\begin{proposition}
- The integration of two complete and valid instances $(S_0, \iota^S), (T_0, \iota^T)$ of specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively is a partial instance 
- $(J_0, \iota^J)$ of $\mathfrak{J}$.  
-\end{proposition}
-
-The integrated partial instance $(J_0, \iota^J)$ is a typed specification $J_0 \rhd J$ that becomes a complete instance $J_0^*$ of the integrated specification 
-$\mathfrak{J}$ by iterative applications of the set $R^{\mathfrak{J}}$ of rewriting rules. 
-Applying pullback over a complete integrated specification $J_0^*$ we get two instances $(S_0', \iota^S)$ and $(T_0', \iota^T)$ of 
-specifications $\mathfrak{S}$ and $\mathfrak{T}$ respectively.
-
-\begin{center}
-\includegraphics[width=0.25\textwidth]{intr-pb.pdf}
-\end{center}
-
-\noindent
-$(S_0', \iota^S)$ and $(T_0', \iota^T)$ may be partial instances with respect to their specifications and further rewriting rules may be applicable 
-from the set $R^{\mathfrak{S}}$ and $R^{\mathfrak{T}}$. The complete and valid instances $(S_0^*, \iota^S), (T_0^*, \iota^T)$ of $\mathfrak{S}$ and $\mathfrak{T}$ after applying rewriting rules, 
-may be integrated again and be used for further derivation. This derivation process can run again and again until no further rewriting rule is applicable: 
-
-\begin{center}
-\includegraphics[width=0.35\textwidth]{fixpoint.pdf}
-\end{center}
-
-As an example for the integration of multiple metamodels we take a DERF process model and an entity model from a healthcare domain and present a data aware workflow model.
-Fig.~\ref{fig:bp} shows a hypertension management workflow model with its meta model. The workflow model is developed from a clinical practice guideline \cite{HTN}. 
-
-
-\begin{figure}[h]
-\centering
- \includegraphics[width=\textwidth]{bp.pdf}
- \caption{Example DERF process model specification: Hypertension Workflow Model}
- \label{fig:bp}
- \end{figure}
- 
-The behavior of DERF process models are given by a coupled transition system. 
-The hypertension workflow model consists of some predicates \textit{[XOR SPLIT]}, \textit{[AND SPLIT]}, \textit{[OR SPLIT]}, etc,. which describes the control flow of the process model. 
-The dynamic semantics of DERF workflow models are provided in ~\cite{RutleMacCaullEtAl2012ECMFA}. 
-The predicates \textit{[Disabled]}, \textit{[Enabled]}, etc,. from predicate signature $\Sigma_1^T$ are annotations and they do not have a semantic counterpart. 
-Task instances with annotations in specification $\mathfrak{S}_0$ give us a state of a workflow instance. 
-And the coupled transition systems produce reachable instances of a workflow model from an initial instance. 
-
-
-Fig.~\ref{fig:bp-instance} shows two specifications $\mathfrak{T}_0$ and $\mathfrak{T}_0'$ which are reachable instances of $\mathfrak{T}_1$ . 
-The predicate $[c,11]$ denotes that they are the instance of case no 11. For every patient there are different instances with different case numbers. 
-In $\mathfrak{T}_0$ the task instance \textit{:Initial BP Measure} is finished (annotated with $<F>$), the branch \textit{:f} and \textit{:g} are evaluated to true and false recursively and both task instances 
-\textit{:Safe} and \textit{:Visit1} are disabled (annotated with $<D>$). 
-In $\mathfrak{T}_0′$ the task instance \textit{:Safe} is enabled (annotated with $<E>$).
-
-\begin{figure}[h]
-\centering
- \includegraphics[width=0.6\textwidth]{bp-instances.pdf}
- \caption{Two reachable instances of the hypertension workflow model}
- \label{fig:bp-instance}
- \end{figure}
-
-We design a data aware process model specification $\mathfrak{J}_1$ by integrating the hypertension workflow model specification $\mathfrak{T}_1$ and 
-the entity specification $\mathfrak{S}_1$ from Fig.~\ref{fig:entity-diagram}. 
-For the integrated specification $\mathfrak{J}_1$ we need to specify a set of atomic constraints and a set of rewriting rules. 
-We may use the predicate symbols associated with the shape graphs $S, T$ from $\Sigma_2^S, \Sigma_2^T$ and from the predicate signatures $\Sigma_1^S, \Sigma_1^T$ of specifications 
-$\mathfrak{S}_1, \mathfrak{T}_1$. For this particular example, we defined a set $R^{\mathfrak{J}_1}$ of rewriting rules $(r, \delta)$ for the integrated specification. 
-Table.~\ref{tbl:highbp} shows the transformation rule of predicate $[HighBP]$. 
-In the transformation rule we included a \textit{condition} of the form $(\forall X) \varphi : \bigwedge_i$ $p_i = q_i$ where all the variables in $p_i$, and $q_i$ are in $\mathfrak{L}$.
-
-
-
-\begin{table}[h]\label{tbl:highbp}    
- \caption{The rewriting predicate $[HighBP]$ from $R^{\mathfrak{J}_1}$ of  $\mathfrak{J}_1$}
+\begin{table}[h]\label{tbl:nonterminatingpredicate}    
+ \caption{Non terminating rewriting predicates of a sample signature $\Sigma_2$}
  \small
  \begin{center}
     \begin{tabular}{| l | c | c | }    
     \hline
-    \multirow{2}{*}{$(r,\delta)$} & \multicolumn{2}{c |}{$\pi^{\Sigma_1}(r)$}  \\ \cline{2-3}
-        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_1)$ $\xleftarrow{\makebox[0.45cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_1)$ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_1) $  \\ \hline    
-    \multirow{4}{*}{$([HighBP], \delta_1)$}  & \includegraphics[width=0.31\textwidth]{pre-post-example.pdf} & \includegraphics[width=0.31\textwidth]{pre-post-example-R.pdf} \\ \cline{2-3}
-				    & \multicolumn{2}{c |}{ $\delta(\pi^{\Sigma_1}(r))$ } \\ \cline{2-3}
-				    & $\delta(\mathfrak{N}_0 \rightarrow \mathfrak{N}_1) \xleftarrow{\makebox[0.45cm] n} \delta( \mathfrak{L}_0 \rightarrow \mathfrak{L}_1)$  & $\delta(\mathfrak{R}_0 \rightarrow \mathfrak{R}_i)$ \\ \cline{2-3}
-				    & \includegraphics[width=0.31\textwidth]{pre-post-example-L-delta.pdf} & \includegraphics[width=0.31\textwidth]{pre-post-example-R-delta.pdf}  \\ 
-				    
+    \multirow{2}{*}{$p$} & \multicolumn{2}{c |}{$\pi^{\Sigma_2}(p)$}  \\ \cline{2-3}
+        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[1cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1}) $ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $    \\ \hline    
+    [$p_1$] 		& \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{nonterm-1.pdf}   \\ \hline
+    [$p_2$] 		& \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{nonterm-2.pdf}   \\ 
+    %[inheritance] 	& \includegraphics[width=0.17\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.17\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.04\textwidth]{inheritance-vis.pdf}  \\ 
     \hline    
     \end{tabular}
     \end{center}
 \end{table}
 \normalsize
 
+It should be clear from above text that the application of \textit{rewriting rules} need to be applied over an instance $(I, \iota)$ before checking \textit{atomic constraints}. 
+By utilizing the \textit{rewriting predicates} we may develop a rewriting system specification with sufficient reasoning capacity. 
+The formulation of the \textit{rewriting predicates} are very expressive since we used double push out approach for the transformation rules and it is possible to mention 
+some negative application conditions. One issue with such expressive rules is that the rewriting systems may suffer non-termination. 
+Table.~\ref{tbl:nonterminatingpredicate} shows two \textit{rewriting predicates} $p_1, p_2$ of a signature $\Sigma_2$ that can possibly make a specification non-terminating. 
+The application of any of the transformation rules from $p_1, p_2$ make the other one active; therefore the application of the rewriting rules over an instance of a specification 
+would iterate forever. 
+
+
+Another issue with this expressive rules is that the DPF system does not restrict the user from writing non-deterministic \textit{rewriting predicates}, and therefore  
+the order of application of \textit{rewriting rules} over an instance $(I, \iota)$ may provide different instances. 
+In literature this issue is attributed as confluent property of a reduction system \cite{BN98}. 
+Table.~\ref{tbl:nonconfluentpredicate} shows two \textit{rewriting predicates} $q_1, q_2$ of a sample signature $\Sigma_2$ to demonstrate the non-confluent nature of DPF rewriting system. 
+The application of the \textit{rewriting predicates} give us different results even though the patterns and negative application conditions are same. So the application of these predicates 
+over an instance would give us different end results. In these scenarios, we may filter out some invalid instances those do not satisfy the set of atomic constraints. 
+After sorting out all complete and valid instances, the user might be provided with different options to choose the instance he is interested to work with. 
+
+
+
+\begin{table}[h]\label{tbl:nonconfluentpredicate}    
+ \caption{Non confluent rewriting predicates of a sample signature $\Sigma_2$}
+ \small
+ \begin{center}
+    \begin{tabular}{| l | c | c | }    
+    \hline
+    \multirow{2}{*}{$p$} & \multicolumn{2}{c |}{$\pi^{\Sigma_2}(p)$}  \\ \cline{2-3}
+        & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[1cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1}) $ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $    \\ \hline    
+    [$p_1$] 		& \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{nonconfluent.pdf}   \\ \hline
+    [$p_2$] 		& \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{nonconfluent2.pdf}   \\ 
+    %[inheritance] 	& \includegraphics[width=0.17\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.17\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.04\textwidth]{inheritance-vis.pdf}  \\ 
+    \hline    
+    \end{tabular}
+    \end{center}
+\end{table}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 \section{Algebraic Specification for Metamodel Integration}\label{lbl:algebra}
 One of our intension to use algebraic specification for DPF metamodelling is to develop an execution environment for DPF framework where one could design and simulate a software model with 
 multiple metamodels. Fig.~\ref{fig:dpfmaude} shows a proposed system architecture for DPF simulation tool where maude tool has been used as an engine to perform 1) Type checking, 2) Conformance checking,
-and 3) Reasoning / derivation. During the design phase, the tool may be used to provide feedback to the designer if the model he is working on satisfies its metamodel or not. 
+and 3) Rewriting / derivation. During the design phase, the tool may be used to provide feedback to the designer if the model he is working on satisfies its metamodel or not. 
 We intend to use a user-friendly user interface (UI) to support better user experience for the developer to simulate a model instance. 
 During the simulation phase, maude tool will be used to produce the instances of a software model. 
 
@@ -470,7 +422,7 @@ During the simulation phase, maude tool will be used to produce the instances of
  
  \begin{figure}[h]
 \centering
- \includegraphics[width=0.8\textwidth]{dpfmaude.png}
+ \includegraphics[width=\textwidth]{dpfmaude.png}
  \caption{System architecture for DPF simulation tool}
  \label{fig:dpfmaude}
  \end{figure}
@@ -492,8 +444,8 @@ This is a barrier to use maude metalevel programming for DPF as the computation 
 For this reason it was suggested for maude programs to lower the number of levels of reflective computation as much as possible, so that a rewriting 
 subcomputation happens at a higher level in the tower only when this is strictly necessary \cite{Clavel2007}.
 But the semantic of DPF metamodel specifications are provided in the opposite way. 
-Once a specification $\mathfrak{S}_i$ is defined in DPF, the computation regarding type checking, conformance checking and reasoning of 
-the instance $\mathfrak{S}_{i+1}$ of the specification $\mathfrak{S}_i$ does not involve any computation regarding the type checking, conformance checking or reasoning of 
+Once a specification $\mathfrak{S}_i$ is defined in DPF, the computation regarding type checking, conformance checking and rewriting of 
+the instance $\mathfrak{S}_{i+1}$ of the specification $\mathfrak{S}_i$ does not involve any computation regarding the type checking, conformance checking or rewriting of 
 $\mathfrak{S}_i$ or any of its metamodel $\mathfrak{S}_{i-1},$ $\mathfrak{S}_{i-2}, etc,.$ anymore. 
 
 Another issue regarding the use of maude metalevel programming is the complex sort infrastructure provided by the module META-TERM. 
@@ -580,8 +532,7 @@ The subterm \textit{rel(``:empDeps'', ``empDeps'', ``Joseph'', ``Employee``)} re
 			  relations : 
 			  rel("G0", "TypeOf", "Employee", "Class")
 			  rel("G0", "TypeOf", "Department", "Class")
-			  rel("G0", "TypeOf", "Ward", "Class")
-			  rel("G0", "TypeOf", "Person", "Class")
+			  rel("G0", "TypeOf", "Ward", "Class")			  
 			  ....
 			  rel("empDeps", "G1", "Employee", "Department")
 			  rel("depEmps", "G1", "Department", "Employee")
@@ -615,8 +566,6 @@ crl [Phi1] :	< DpfInstance : DPF | relations : rel(R1, R2, W, Z) rel(R2, "G1", X
 
 \normalsize
 
-The maude specification presented in this section can easily be used to integrate one specification with another one as the disjoin union and pullback operations do not require any parsing since 
-each specification is represented as a seperate $Object$. 
 
  
 \section{Related Work}\label{lbl:relatedwork}

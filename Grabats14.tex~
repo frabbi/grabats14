@@ -144,8 +144,8 @@ On the other hand, the semantics of \textit{rewriting predicates} are defined by
         & $(\mathfrak{N}_0 \rightarrow \mathfrak{N}_{1})$ $\xleftarrow{\makebox[1cm]  n  }$  $(\mathfrak{L}_0 \rightarrow \mathfrak{L}_{1}) $ & $(\mathfrak{R}_0 \rightarrow \mathfrak{R}_{1}) $ &   \\ \hline    
     \multirow{2}{*}{[opposite]} 		& \includegraphics[width=0.13\textwidth]{inv-1.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} & \multirow{2}{*}{\includegraphics[width=0.13\textwidth]{inv-vis.pdf}}  \\ \cline{2-3}
 			& \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} &  \\ \hline
-    [composition] 	& \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & \includegraphics[width=0.13\textwidth]{comp-vis.pdf}  \\ \hline 			
-    [inheritance] 	& \includegraphics[width=0.09\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.09\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.03\textwidth]{inheritance-vis.pdf}  \\ 
+    [composition] 	& \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & \includegraphics[width=0.13\textwidth]{comp-vis.pdf}  \\ %\hline 			
+    %[inheritance] 	& \includegraphics[width=0.17\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.17\textwidth]{inheritance-R.pdf} & \includegraphics[width=0.04\textwidth]{inheritance-vis.pdf}  \\ 
     \hline    
     \end{tabular}
     \end{center}
@@ -203,11 +203,11 @@ Lets take the following requirements of a healthcare domain to develop an entity
 
 \textbf{4.} \textit{An employee who is involved in a ward, must work in the controlling department. }
 
-\textbf{5.} \textit{Every person has a name. }
+%\textbf{5.} \textit{Every person has a name. }
 
-\textbf{6.} \textit{A person could be a Patient or an Employee. }
+%\textbf{6.} \textit{A person could be a Patient or an Employee. }
 
-\textbf{7.} \textit{Patients systolic and diastolic blood pressure records are natural numbers. }
+\textbf{5.} \textit{Patients systolic and diastolic blood pressure records are natural numbers. }
 
 
 
@@ -229,6 +229,13 @@ the fourth requirement ``an employee who is involved in a ward, must work in the
 and a \textit{predicate constraint} $[image-inclusion]$ over morphisms $depEmps$, $wardDeps$, $wardEmps$ and $wardEmps'$ where $wardEmps$ := $wardDeps; depEmps$ 
 (the composition of morphisms $wardDeps$ and $depEmps$).
 
+\begin{figure}[t]
+\centering
+ \includegraphics[width=0.9\textwidth]{entity-1-pullback.pdf}
+ \caption{ Pullback $\alpha^{\Sigma_2}([inv]) \xleftarrow{\iota^*} O^* \xrightarrow{\delta_1^*} I $ of $\alpha^{\Sigma_2}([inv]) \xrightarrow{\delta_1} S \xleftarrow{\iota} I $ }
+ \label{fig:entity-pb}
+ \end{figure}
+ 
 
 \begin{table}[h]\label{tbl:atomicconstraint}
  \caption{The set of atomic constraints $C^{\mathfrak{S}_1}$ of  $\mathfrak{S}_1$}
@@ -263,23 +270,18 @@ and a \textit{predicate constraint} $[image-inclusion]$ over morphisms $depEmps$
 				  & \includegraphics[width=0.13\textwidth]{inv-2.pdf} & \includegraphics[width=0.13\textwidth]{inv-R.pdf} &  
 				  \includegraphics[width=0.19\textwidth]{inv-2-delta.pdf} & \includegraphics[width=0.19\textwidth]{inv-R-delta.pdf} \\ \hline    
     $([composition], \delta_7)$ 		  & \includegraphics[width=0.13\textwidth]{comp-L.pdf} & \includegraphics[width=0.13\textwidth]{comp-R.pdf} & 
-				    \includegraphics[width=0.19\textwidth]{comp-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{comp-R-delta.pdf} \\ \hline 			
-    $([inheritance], \delta_8)$ 		  & \includegraphics[width=0.08\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.08\textwidth]{inheritance-R.pdf} & 
-				    \includegraphics[width=0.10\textwidth]{inheritance-L-delta.pdf} & \includegraphics[width=0.10\textwidth]{inheritance-R-delta.pdf} \\ \hline
-    $([inheritance], \delta_9)$ 		  & \includegraphics[width=0.08\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.08\textwidth]{inheritance-R.pdf} & 
-				    \includegraphics[width=0.10\textwidth]{inheritance2-L-delta.pdf} & \includegraphics[width=0.10\textwidth]{inheritance2-R-delta.pdf} \\ 				    
+				    \includegraphics[width=0.19\textwidth]{comp-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{comp-R-delta.pdf} \\ 
+    %$([inheritance], \delta_8)$ 		  & \includegraphics[width=0.16\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.16\textwidth]{inheritance-R.pdf} & 
+    %			    \includegraphics[width=0.19\textwidth]{inheritance-L-delta.pdf} & \includegraphics[width=0.19\textwidth]{inheritance-R-delta.pdf} \\ \hline
+    %$([inheritance], \delta_9)$ 		  & \includegraphics[width=0.16\textwidth]{inheritance-L.pdf} & \includegraphics[width=0.16\textwidth]{inheritance-R.pdf} & 
+    %				    \includegraphics[width=0.2\textwidth]{inheritance2-L-delta.pdf} & \includegraphics[width=0.2\textwidth]{inheritance2-R-delta.pdf} \\ 				    
     \hline    
     \end{tabular}
     \end{center}
 \end{table}
 \normalsize
 
-\begin{figure}[t]
-\centering
- \includegraphics[width=0.9\textwidth]{entity-1-pullback.pdf}
- \caption{ Pullback $\alpha^{\Sigma_2}([inv]) \xleftarrow{\iota^*} O^* \xrightarrow{\delta_1^*} I $ of $\alpha^{\Sigma_2}([inv]) \xrightarrow{\delta_1} S \xleftarrow{\iota} I $ }
- \label{fig:entity-pb}
- \end{figure}
+
 
 Fig.~\ref{fig:entity-diagram}(a) shows a possible instance $(I, \iota)$ of $\mathfrak{S}_1$. 
 Even though $I$ is typed by $S$, it is not a valid instance of $\mathfrak{S}_1$ since it does not satisfy the \textit{predicate constraints} $[surjective]$, $[inverse]$ and $[image-inclusion]$. 
@@ -294,8 +296,8 @@ By applying \textit{rewriting rules} from Table.~\ref{tbl:rewritingrules} over $
 An instance of a specification where \textit{rewriting rules} are applicable is called a partial instance. 
 The \textit{rewriting predicate} $[opposite]$ is used to derive morphism $y \xrightarrow{g} x$ (if it does not exist) from the existance of a morphism $x \xrightarrow{f} y$ or vice versa; 
 $[composition]$ is used to derive morphism $z \xrightarrow{h} x$ (if it does not exist) from the existance of morphisms $z \xrightarrow{g} y$ and $y \xrightarrow{f} x$; 
-$[inheritance]$ derives a typing morphism $x \rightarrow Z$ (if it is not present) if $x \rightarrow Y$ and $Z$ is a superclass of $Y$. 
-Once we apply the \textit{rewriting rules} for $[opposite]$, $[composition]$ and $[inheritance]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
+%$[inheritance]$ derives a typing morphism $x \rightarrow Z$ (if it is not present) if $x \rightarrow Y$ and $Z$ is a superclass of $Y$. 
+Once we apply the \textit{rewriting rules} for $[opposite]$, $[composition]$ over $(I, \iota)$ we get a complete instance of specification $\mathfrak{S}_1$ as shown in 
 Fig.~\ref{fig:entity-1-full}. We call it a complete instance of $\mathfrak{S}_1$ as no more \textit{rewriting predicates} are further applicable on $(I, \iota)$. 
 This complete instance is a valid instance of $\mathfrak{S}_1$ as it satisfies all atomic constraints. 
 Now it is easy to understand the motivation of using \textit{rewriting predicates} in DPF as it permits us to specify partial instance of a specification. 
@@ -578,8 +580,7 @@ The subterm \textit{rel(``:empDeps'', ``empDeps'', ``Joseph'', ``Employee``)} re
 			  relations : 
 			  rel("G0", "TypeOf", "Employee", "Class")
 			  rel("G0", "TypeOf", "Department", "Class")
-			  rel("G0", "TypeOf", "Ward", "Class")
-			  rel("G0", "TypeOf", "Person", "Class")
+			  rel("G0", "TypeOf", "Ward", "Class")			  
 			  ....
 			  rel("empDeps", "G1", "Employee", "Department")
 			  rel("depEmps", "G1", "Department", "Employee")

@@ -13,9 +13,6 @@
  issn = {0747-7171},
  pages = {316--337},
  numpages = {22},
- url = {http://dx.doi.org/10.1016/j.jsc.2010.09.010},
- doi = {10.1016/j.jsc.2010.09.010},
- acmid = {1937402},
  publisher = {Academic Press, Inc.},
  address = {Duluth, MN, USA},
  keywords = {Evolution, Migration, Refactoring, Transformation},
@@ -228,7 +225,7 @@ keywords = "Model-driven engineering "
 	author = {Fazle Rabbi and Yngve Lamo and Wendy MacCaull},
 	title = {{A Flexible Metamodelling Approach for Healthcare Systems}},
 	year = 2014, 
-	journal = {2nd European Workshop on Practical Aspects of Health Informatics (PAHI), Submitted}
+	journal = {2nd European Workshop on Practical Aspects of Health Informatics (PAHI), Accepted}
 }
 
 @article{CBMS14,
