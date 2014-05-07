@@ -1,6 +1,47 @@
 % This file was created with JabRef 2.7b.
 % Encoding: UTF-8
 
+@article{Jackson02,
+ author = {Jackson, Daniel},
+ title = {Alloy: A Lightweight Object Modelling Notation},
+ journal = {ACM Trans. Softw. Eng. Methodol.},
+ issue_date = {April 2002},
+ volume = {11},
+ number = {2},
+ month = apr,
+ year = {2002},
+ issn = {1049-331X},
+ pages = {256--290},
+ numpages = {35},
+ url = {http://doi.acm.org/10.1145/505145.505149},
+ doi = {10.1145/505145.505149},
+ acmid = {505149},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Object models, Z specification language, first-order logic},
+} 
+[
+
+@book{Leeuwen90,
+  editor    = {Jan van Leeuwen},
+  title     = {Handbook of Theoretical Computer Science, Volume A: Algorithms
+               and Complexity},
+  publisher = {Elsevier and MIT Press},
+  year      = {1990},
+  isbn      = {0-444-88071-2, 0-262-22038-5},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@book{BN98,
+ author = {Baader, Franz and Nipkow, Tobias},
+ title = {Term Rewriting and All That},
+ year = {1998},
+ isbn = {0-521-45520-0},
+ publisher = {Cambridge University Press},
+ address = {New York, NY, USA},
+} 
+
+
 @article{SLK11,
  author = {Schulz, Christoph and L\"{o}we, Michael and K\"{o}nig, Harald},
  title = {A Categorical Framework for the Transformation of Object-oriented Systems: Models and Data},

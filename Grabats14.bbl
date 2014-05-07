@@ -1,6 +1,12 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{RMWL12}
 
+\bibitem[BCM{\etalchar{+}}10]{Baader10}
+F.~Baader, D.~Calvanese, D.~McGuinness, D.~Nardi, P.~Patel-Schneider.
+\emph{The Description Logic Handbook: Theory, Implementation and Applications}.
+Cambridge University Press, 2010.
+\\\url{http://books.google.no/books?id=c35WRQAACAAJ}
+
 \bibitem[BM06]{Bruni2006}
 R.~Bruni, J.~Meseguer.
 Semantic Foundations for Generalized Rewrite Theories.
@@ -23,6 +29,19 @@ M.~Clavel, F.~Dur{\'a}n, S.~Eker, P.~Lincoln, N.~Mart\'{\i}-Oliet, J.~Meseguer,
   Program and Verify Systems in Rewriting Logic}.
 Lecture Notes in Computer Science~4350.
 Springer, 2007.
+
+\bibitem[Jac02]{Jackson02}
+D.~Jackson.
+Alloy: A Lightweight Object Modelling Notation.
+\emph{ACM Trans. Softw. Eng. Methodol.} 11(2):256--290, Apr. 2002.
+\\\doi{10.1145/505145.505149}
+\\\url{http://doi.acm.org/10.1145/505145.505149}
+
+\bibitem[vL90]{Leeuwen90}
+J.~van Leeuwen (ed.).
+\emph{Handbook of Theoretical Computer Science, Volume A: Algorithms and
+  Complexity}.
+Elsevier and MIT Press, 1990.
 
 \bibitem[RMWL12]{RutleMacCaullEtAl2012ECMFA}
 A.~Rutle, W.~MacCaull, H.~Wang, Y.~Lamo.

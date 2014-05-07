@@ -27,7 +27,16 @@
 \short{Algebraic Specification to Realize the Diagram Predicate Framework} % Short title of the article (optional)
 %\author{\autref{1}\sponsor{}} % Authors and references to addresses
 %\institute{\autlabel{1}} % Institutes with labels
-%\abstract{} 
+\abstract{
+Model Driven Engineering (MDE) is considered to be an effective way of improving the quality of software engineering, system design and development, 
+and communication between the people concerned with these problems as MDE provides 
+abstract representations of the knowledge and activities that govern a particular application domain. 
+Different types of application domains require different domain specific languages (DSL) to increase productivity and simplify software design. 
+DSLs are created specifically to solve problems for different application domains.
+A general but formal approach to develop domain specific modelling languages has a great demand in the software engineering field. 
+Diagram Predicate Framework (DPF) is a formal approach for metamodelling that can be used to develop different modelling languages. 
+In this article, we enhance DPF with rewriting rules and provide an executable environment for simulating DPF models. 
+} 
 \keywords{model driven engineering, model transformation, metamodelling, rewriting theory, workflow model}
 
 \begin{document}
@@ -522,6 +531,8 @@ the subterm \textit{rel(``:Typeof'', ``TypeOf'', ``Joseph'', ``Employee'')} repr
 Here $G0$ denotes that $Employee$ vertex will be treated as a metalevel node. 
 The subterm \textit{rel(``empDeps'', ``G1'', ``Employee'', ``Department'')} represents that $empDeps$ is a morphism where the source is $Employee$ and target is $Department$. 
 The subterm \textit{rel(``:empDeps'', ``empDeps'', ``Joseph'', ``Employee``)} represents an instance of the morphism $empDeps$ from source $Joseph$ to $Emergency$.
+Each $sigmap$ subterm represents an association from the arity of predicates to the shape graph. 
+
 
 
 \tiny
@@ -543,36 +554,122 @@ The subterm \textit{rel(``:empDeps'', ``empDeps'', ``Joseph'', ``Employee``)} re
 			  rel(":empDeps", "empDeps", "Joseph", "Emergency") 			  
 			  ,
 			  sigMaps : 
-			  sigmap(Sig3, "empDeps", "ops" ) sig(Sig3, "depEmps", "ops" )
+			  sigmap(Sig3, "empDeps", "[ops]" ) sigmap(Sig3, "depEmps", "[ops]" )
+			  sigmap(Sig4, "wardEmps'", "[IMG-INC]-S") sigmap(Sig4, "wardEmps", "[IMG-INC]-T")
 			  ....
 			> .
  
 \end{verbatim}
 \normalsize
 
-The following maude specification checks graph homomorphism for DPF instances if they are type correct. We use maude $search$ command to check for valid and complete instances. 
+We translated \textit{rewriting predicates} to \textit{conditional rewrite rules} following maude speicification syntax. 
+The translation of the $[opposite]$ predicate from Table.~\ref{tbl:rewritingpredicate} is provided below. 
+The matching pattern checks for an instance $(morph)$ of a morphism $(morphType)$ that is associated with the predicate $[ops]$. 
+The negative application condition is specified as a $if$ statement: the statement is satisfied if an instance of opposite morphism $(opMorph)$ does not exists with the source `Z' and target `X'. 
+The replacement pattern is specified as a term that creates an instance of an opposite morphism $(opMorph)$ with source `Z' and target `X'. 
+
+\tiny
+\begin{verbatim}
+vars X Z PropName PropType OpProp : String .
+var SigId : SIGID .
+var G : DpfGraph .
+var SG : SignatureMaps .
+
+crl [ops] :	< DpfInstance : DPF | relations : rel(morph, morphType, X, Z) G , 
+				       sigMaps  : sigmap(SigId, morphType, "[ops]") sigmap(SigId, opMorph , "[ops]") SG > 
+		=> < DpfInstance : DPF | relations : rel(morph, morphType, X, Z) rel(":prop", opMorph, Z, X) G , 
+					sigMaps : sigmap(SigId, morphType, "ops") sigmap(SigId, opMorph , "ops") SG > 
+		if not relation-exists(opMorph, Z, X, G) .
+\end{verbatim}
+\normalsize
+
+We developed a Java program to externally follow a strategy in order to execute maude programs in different phases. 
+During the first phase it prepares a maude system module where it loads all conditional rules related to  \textit{rewriting predicates}, the initial configuration of a DPF instance, 
+and execute the following $search$ command to get a configuration where no more rules are applicable. 
+We get all possible complete instances by executing this command.
+
+\begin{center}
+\begin{verbatim}
+ search initState =>! Ob:Object .
+\end{verbatim}
+\end{center}
+
+In the next phase, for each complete instance, the Java program prepares a maude system module where it loads the conditional rules related to \textit{predicate constraints} 
+and \textit{graph homomorphisms} for type checking. The following code fragment shows the $crl$ rule that verifies if a specification satisfies the $[image-inclusion]$ predicate constraint from 
+Table.~\ref{tbl:predicateconstraint}. 
+
+\tiny
+\begin{verbatim}
+crl [IMG-INC] :	< DpfInstance : DPF | relations : rel(R1, morphType1, X, Y) G , 
+		  sigMaps : sigmap(SigId, morphType1, "[IMG-INC]-S") sigmap(SigId, morphType2, "[IMG-INC]-T") SG > 
+		=> error (RULE-IMG-INC, rel(R1, morphType2, X,Y) )
+		if not relation-exists(morphType2, X, Y, G) .
+\end{verbatim}
+\normalsize
+
+
+
+The following maude specification checks graph homomorphism for DPF instances if they are type correct. 
 
 
 \tiny
 \begin{verbatim}
+vars X Y Z R1 R2 W Z : String .
+..
 crl [Phi0] :	< DpfInstance : DPF | relations : rel(R1, "TypeOf", X, Y) G , sigMaps : SG > 
-			 => error (RULE-PHI0, rel(R1, "TypeOf", X, Y) )
-			if (R1 =/= "G0") /\ (not type-exists("TypeOf", Y, G) ) .
+		=> error (RULE-PHI0, rel(R1, "TypeOf", X, Y) )
+		if (R1 =/= "G0") /\ (not type-exists("TypeOf", Y, G) ) .
 
 crl [Phi1] :	< DpfInstance : DPF | relations : rel(R1, R2, W, Z) rel(R2, "G1", X, Y) G , sigMaps :  SG > 
-			 => error (RULE-PHI1, rel(R1, R2, W, Z) rel(R2, "G1", X, Y) )
-			if (R2 =/= "G1") /\ ((not supertype-exists(W, X, G)) or (not supertype-exists(Z, Y, G))) .
+		 => error (RULE-PHI1, rel(R1, R2, W, Z) rel(R2, "G1", X, Y) )
+		if (R2 =/= "G1") /\ ((not supertype-exists(W, X, G)) or (not supertype-exists(Z, Y, G))) .
 \end{verbatim}
 
 \normalsize
 
 
- 
+We use the following $search$ command to verify if a complete DPF instance is a valid instance or not:
+
+\begin{center}
+\begin{verbatim}
+ search finalState =>! < DpfInstance : DPF | A:AttributeSet > .
+\end{verbatim}
+\end{center}
+
+
+
+
+
 \section{Related Work}\label{lbl:relatedwork}
+Maude is a formal declarative programming language based on the mathematical theory of rewriting logic; 
+it is a state--of--the--art formal tool in the fields of algebraic specification \cite{Leeuwen90}. 
+Custom data types, operators and their syntax may be defined algebraically by equations. 
+Maude supports Membership Equational Logic (MEL), Object--Oriented programming including multiple inheritance and asynchronous communication through message passing.
+The dynamic behavior of a system is defined by rewrite rules which can be conditional/unconditional. 
+Although Maude specification is powerful enough to develop the syntax and semantics of a new domain specific language, it is very difficult to use in practice because 
+the language is not graphical and 
+it has a steep learning curve. 
 
 
+Alloy is a structural modelling language for describing structural properties \cite{Jackson02}. 
+The language offers graphical object models based on set--based formula syntax which is capable of expressing complex structural constraints and behaviour 
+yet amenable to a fully automatic semantic analysis through the use of a boolean satisfiability problem (SAT) solver.
+For a given logical formula/metamodel, Alloy attempts to find a model which satisfies the formula/metamodel. 
+The Alloy analyser attempts to find counterexamples within a limited scope which violates the constraints of the system. 
+In our situation our problem is formulated in different way as we apply \textit{rewriting rules} over a partial instance of a specification in order to produce a complete instance 
+and afterwords validate if the complete instance conforms to its meta model by type checking and satisfying \textit{atomic constraints}. 
 
-\section{Conclusion}\label{lbl:conclusion}
+A relevant research topic to design and develop reasoning systems is OWL Ontology language. 
+The language is designed to support the Semantic Web. 
+The semantic of OWL is based on description logic \cite{Baader10} which is a decidable fragment of first--order predicate logic. 
+The OWL language focus on describing classes and roles, and have a set-theoretic semantics to capture knowledge about some domain of interest. 
+Since OWL Ontology keeps only TBox (Terminology) and ABox (Assertion) information, it does not properly support metamodelling.
+
+Currently we are investigating how an integrated system model may be translated to an algebraic specification 
+to realize the static and dynamic semantics of DPF specifications and the integration of multiple metamodels. 
+In future we will investigate on strategies that should be followed to make DPF rewriting process confluent. 
+
+
  
 % Acknowledgements for colleagues, referees, ...
 % ==============================================
